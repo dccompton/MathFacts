@@ -30,7 +30,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var quesionAnswer2: UIButton!;
     @IBOutlet weak var quesionAnswer3: UIButton!;
     
+    @IBOutlet weak var additionButton: UIButton!;
+    @IBOutlet weak var orLabel: UILabel!;
+    @IBOutlet weak var subtractionButton: UIButton!;
+    
     @IBAction func playButtonPressed() {
+        
+    }
+    
+    @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
         
     }
     
