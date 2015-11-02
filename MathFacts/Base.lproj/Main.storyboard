@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="19809-NSARH7" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-QS-lL7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="19809-NSARH7" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-QS-lL7" userLabel="imgBackground">
                                 <rect key="frame" x="-363" y="-64" width="1500" height="1500"/>
                                 <animations/>
                                 <constraints>
@@ -26,6 +26,35 @@
                                     <constraint firstAttribute="width" constant="1500" id="PbZ-G7-TCD"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Math-Facts" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-k8-kp1" userLabel="imgLogo">
+                                <rect key="frame" x="138" y="20" width="325" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4TQ-UJ-Mcv"/>
+                                    <constraint firstAttribute="width" constant="462" id="ILu-8R-JVV"/>
+                                    <constraint firstAttribute="height" constant="57" id="bRF-xn-IDA"/>
+                                    <constraint firstAttribute="width" constant="325" id="cLz-4Z-zIc"/>
+                                    <constraint firstAttribute="width" constant="368" id="mBq-dj-L7X"/>
+                                    <constraint firstAttribute="height" constant="72" id="njP-61-SNz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ILu-8R-JVV"/>
+                                        <exclude reference="bRF-xn-IDA"/>
+                                        <exclude reference="mBq-dj-L7X"/>
+                                        <exclude reference="njP-61-SNz"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-2o-vfP" userLabel="playButton">
+                                <rect key="frame" x="225" y="432" width="151" height="148"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="2Fy-MF-Ech"/>
+                                    <constraint firstAttribute="width" constant="151" id="cWI-Fz-2JX"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="play"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -35,13 +64,17 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4dP-QS-lL7" secondAttribute="bottom" id="TNg-3Q-3Rh"/>
                             <constraint firstAttribute="trailing" secondItem="4dP-QS-lL7" secondAttribute="trailing" id="VBC-5q-TsJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4dP-QS-lL7" secondAttribute="trailing" constant="-557" id="aKI-St-TBi"/>
+                            <constraint firstItem="MPx-k8-kp1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fCK-qP-vsU"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-284" id="lp4-pb-JqT"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-31" id="lzP-Vl-Isd"/>
+                            <constraint firstItem="MPx-k8-kp1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oXO-ox-OLs"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4dP-QS-lL7" secondAttribute="bottom" constant="-836" id="ozs-Gv-bZc"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="puX-ay-e80"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4dP-QS-lL7" secondAttribute="bottom" constant="-225" id="qL5-ET-cck"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f1u-2o-vfP" secondAttribute="bottom" constant="20" id="qyH-OQ-UoE"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-383" id="tnE-bx-Qqv"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-64" id="w23-ii-ozu"/>
+                            <constraint firstItem="f1u-2o-vfP" firstAttribute="centerX" secondItem="MPx-k8-kp1" secondAttribute="centerX" id="x78-cm-jfP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -56,6 +89,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageBackground" destination="4dP-QS-lL7" id="lXC-vA-Rez"/>
+                        <outlet property="imageLogo" destination="MPx-k8-kp1" id="TSe-Wz-mde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,5 +101,7 @@
     </scenes>
     <resources>
         <image name="19809-NSARH7" width="1667" height="1667"/>
+        <image name="Math-Facts" width="609" height="96"/>
+        <image name="play" width="272" height="268"/>
     </resources>
 </document>
