@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Costants
+    let MAX: Int = 10;
+    
     //IBOutlets
     @IBOutlet weak var imageBackground: UIImageView!;
     @IBOutlet weak var imageLogo: UIImageView!;
@@ -34,11 +37,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var orLabel: UILabel!;
     @IBOutlet weak var subtractionButton: UIButton!;
     
+    @IBOutlet weak var restartButton: UIButton!;
+    
     @IBAction func playButtonPressed() {
         
     }
     
     @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
+    
         
     }
     
@@ -50,8 +56,8 @@ class ViewController: UIViewController {
         return 0;
     }
     
-    func randomInt(min: Int, max:Int) -> Int {
-        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+    func randomInt(max:Int) -> Int {
+        return min + Int(arc4random_uniform(10))
     }
 }
 

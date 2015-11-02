@@ -26,25 +26,6 @@
                                     <constraint firstAttribute="width" constant="1500" id="PbZ-G7-TCD"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWo-W3-sxU" userLabel="additionButton">
-                                <rect key="frame" x="-353" y="-54" width="137" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="137" id="0NU-uI-iOi"/>
-                                    <constraint firstAttribute="height" constant="30" id="SYB-MN-w0x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="Addition">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5 x 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmt-8M-mAd" userLabel="problemLabel">
-                                <rect key="frame" x="-353" y="-54" width="228" height="43"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-2o-vfP" userLabel="playButton">
                                 <rect key="frame" x="225" y="432" width="151" height="148"/>
                                 <animations/>
@@ -57,7 +38,7 @@
                                     <action selector="playButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zee-XL-ROe"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 x 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uo-sSV" userLabel="problemLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 x 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uo-sSV" userLabel="problemLabel">
                                 <rect key="frame" x="186" y="172" width="228" height="43"/>
                                 <animations/>
                                 <constraints>
@@ -68,7 +49,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-qj-EtZ" userLabel="questionAnswer1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-qj-EtZ" userLabel="questionAnswer1">
                                 <rect key="frame" x="277" y="248" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -83,7 +64,7 @@
                                     <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qXf-fa-oJz"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHy-km-fat" userLabel="questionAnswer2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHy-km-fat" userLabel="questionAnswer2">
                                 <rect key="frame" x="277" y="305" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -98,7 +79,7 @@
                                     <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVF-Mb-w3P"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJV-0E-VeW" userLabel="questionAnswer3">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJV-0E-VeW" userLabel="questionAnswer3">
                                 <rect key="frame" x="277" y="367" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -133,7 +114,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-y7-7Rd" userLabel="additionButton">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-y7-7Rd" userLabel="additionButton">
                                 <rect key="frame" x="232" y="248" width="137" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -148,7 +129,7 @@
                                     <action selector="typeOfPlayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plD-Lq-e09"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-KY-eq1" userLabel="orLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-KY-eq1" userLabel="orLabel">
                                 <rect key="frame" x="274" y="303" width="52" height="34"/>
                                 <animations/>
                                 <constraints>
@@ -159,7 +140,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-98-TAh" userLabel="subtractionButton">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-98-TAh" userLabel="subtractionButton">
                                 <rect key="frame" x="198" y="367" width="204" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -186,6 +167,18 @@
                                     <action selector="typeOfPlayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dIH-CU-P9c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQn-aq-oZP">
+                                <rect key="frame" x="238" y="550" width="125" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XvR-77-oGG"/>
+                                    <constraint firstAttribute="width" constant="125" id="zR8-ZA-gBv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -195,6 +188,7 @@
                             <constraint firstItem="cK3-KY-eq1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5xC-90-EmG"/>
                             <constraint firstItem="Ret-98-TAh" firstAttribute="top" secondItem="cK3-KY-eq1" secondAttribute="bottom" constant="30" id="6VK-lr-nld"/>
                             <constraint firstItem="0gA-y7-7Rd" firstAttribute="top" secondItem="EN7-uo-sSV" secondAttribute="bottom" constant="33" id="7aK-bG-qZx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XQn-aq-oZP" secondAttribute="bottom" constant="20" id="D9K-7Y-WUf"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EGm-Fx-7Uw"/>
                             <constraint firstItem="qJV-0E-VeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gfk-0M-jll"/>
                             <constraint firstItem="0gA-y7-7Rd" firstAttribute="top" secondItem="EN7-uo-sSV" secondAttribute="bottom" constant="33" id="H8K-9H-kX5"/>
@@ -202,6 +196,7 @@
                             <constraint firstItem="yHy-km-fat" firstAttribute="top" secondItem="BQo-qj-EtZ" secondAttribute="bottom" constant="20" id="HyJ-Al-SaE"/>
                             <constraint firstItem="MPx-k8-kp1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IAx-AY-Urh"/>
                             <constraint firstItem="0gA-y7-7Rd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K92-Ji-GRx"/>
+                            <constraint firstItem="XQn-aq-oZP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lff-0m-opo"/>
                             <constraint firstItem="0gA-y7-7Rd" firstAttribute="top" secondItem="EN7-uo-sSV" secondAttribute="top" id="Mqh-Mw-3D8"/>
                             <constraint firstItem="cK3-KY-eq1" firstAttribute="top" secondItem="0gA-y7-7Rd" secondAttribute="bottom" constant="25" id="Mrv-3Q-YuH"/>
                             <constraint firstItem="0gA-y7-7Rd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QAd-g6-08J"/>
@@ -265,6 +260,7 @@
                         <outlet property="quesionAnswer2" destination="yHy-km-fat" id="gb2-Tj-8fx"/>
                         <outlet property="quesionAnswer3" destination="qJV-0E-VeW" id="fXT-R7-1kl"/>
                         <outlet property="questionLable" destination="EN7-uo-sSV" id="ksq-H4-qYA"/>
+                        <outlet property="restartButton" destination="XQn-aq-oZP" id="kfV-2z-2pd"/>
                         <outlet property="subtractionButton" destination="Ret-98-TAh" id="g5T-XB-kZQ"/>
                     </connections>
                 </viewController>
