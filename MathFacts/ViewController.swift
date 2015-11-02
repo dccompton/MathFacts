@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     //IBOutlets
     @IBOutlet weak var imageBackground: UIImageView!;
+    @IBOutlet weak var outOfLabel: UILabel!;
     @IBOutlet weak var imageLogo: UIImageView!;
     @IBOutlet weak var playButton: UIButton!;
     
