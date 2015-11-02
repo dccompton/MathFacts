@@ -20,11 +20,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //IBOutlets
     @IBOutlet weak var imageBackground: UIImageView!;
     @IBOutlet weak var imageLogo: UIImageView!;
     @IBOutlet weak var playButton: UIButton!;
     
+    @IBOutlet weak var questionLable: UILabel!;
+    @IBOutlet weak var quesionAnswer1: UIButton!;
+    @IBOutlet weak var quesionAnswer2: UIButton!;
+    @IBOutlet weak var quesionAnswer3: UIButton!;
+    
     @IBAction func playButtonPressed() {
+        
+    }
+    
+    @IBAction func answerPressed(sender: AnyObject) {
         
     }
     
