@@ -22,6 +22,10 @@ class ViewController: UIViewController {
     
     //Costants
     let MAX: Int = 10;
+    let MAX_PROBLEMS: Int = 30;
+    
+    //Variables
+    var answer: Int = 0;
     
     //IBOutlets
     @IBOutlet weak var imageBackground: UIImageView!;
@@ -29,10 +33,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageLogo: UIImageView!;
     @IBOutlet weak var playButton: UIButton!;
     
-    @IBOutlet weak var questionLable: UILabel!;
-    @IBOutlet weak var quesionAnswer1: UIButton!;
-    @IBOutlet weak var quesionAnswer2: UIButton!;
-    @IBOutlet weak var quesionAnswer3: UIButton!;
+    @IBOutlet weak var questionLabel: UILabel!;
+    @IBOutlet weak var questionAnswer1: UIButton!;
+    @IBOutlet weak var questionAnswer2: UIButton!;
+    @IBOutlet weak var questionAnswer3: UIButton!;
     
     @IBOutlet weak var additionButton: UIButton!;
     @IBOutlet weak var orLabel: UILabel!;
@@ -42,10 +46,28 @@ class ViewController: UIViewController {
     
     @IBAction func playButtonPressed() {
         
+        additionButton.hidden = false;
+        orLabel.hidden = false;
+        subtractionButton.hidden = false;
+        
+        playButton.hidden = true;
+        
     }
     
     @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
-    
+        
+        additionButton.hidden = true;
+        orLabel.hidden = true;
+        subtractionButton.hidden = true;
+        
+        let buttonPressed = sender as! UIButton;
+        
+        if buttonPressed.tag == 1 {
+            runAdditionQuestion();
+        }
+        else if buttonPressed.tag == 2 {
+            computeSubtractionFact();
+        }
         
     }
     
@@ -53,12 +75,22 @@ class ViewController: UIViewController {
         
     }
     
-    func getRandomNum() -> Int {
-        return 0;
+    func runAdditionQuestion() {
+        
+        var firstNumber: Int = Int(arc4random_uniform(11));
+        var secondNumber: Int = Int(arc4random_uniform(11));
+        answer = firstNumber + secondNumber;
+        
+        questionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
+        
+        questionAnswer1.titleLabel.text = Int(arc4random_uniform(19));
+        questionAnswer2.titleLabel.text = Int(arc4random_uniform(19));
+        questionAnswer3.titleLabel.text = Int(arc4random_uniform(19));
+
     }
     
-    func randomInt(max:Int) -> Int {
-        return min + Int(arc4random_uniform(10))
+    func computeSubtractionFact() {
+        
     }
 }
 
