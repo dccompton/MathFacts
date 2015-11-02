@@ -22,7 +22,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageBackground: UIImageView!;
     @IBOutlet weak var imageLogo: UIImageView!;
-
-
+    @IBOutlet weak var playButton: UIButton!;
+    
+    @IBAction func playButtonPressed() {
+        
+    }
+    
+    func getRandomNum() -> Int {
+        return 0;
+    }
+    
+    func randomInt(min: Int, max:Int) -> Int {
+        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+    }
 }
 
