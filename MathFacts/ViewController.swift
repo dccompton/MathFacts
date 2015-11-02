@@ -21,11 +21,11 @@ class ViewController: UIViewController {
     }
     
     //Costants
-    let MAX: Int = 10;
-    let MAX_PROBLEMS: Int = 30;
+    let MAX_NUMBER_RANGE: UInt32 = 10;
+    let MAX_PROBLEMS: Int = 100;
     
     //Variables
-    var answer: Int = 0;
+    var problemAnswer: Int = 0;
     
     //IBOutlets
     @IBOutlet weak var imageBackground: UIImageView!;
@@ -77,11 +77,25 @@ class ViewController: UIViewController {
     
     func runAdditionQuestion() {
         
-        var firstNumber: Int = Int(arc4random_uniform(11));
-        var secondNumber: Int = Int(arc4random_uniform(11));
-        answer = firstNumber + secondNumber;
+        var firstNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        var secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        problemAnswer = firstNumber + secondNumber;
         
         questionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
+        
+        //Build answer selections
+        var answerOrder = Int(arc4random_uniform(3)) + 1;
+        
+        switch answerOrder {
+        case 1:
+            questionAnswer1.titleLabel.text = (String)problemAnswer;
+            questionAnswer2.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            questionAnswer3.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        case 2:
+            questionAnswer1.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            questionAnswer2.titleLabel.text = problemAnswer
+            questionAnswer3.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        }
         
         questionAnswer1.titleLabel.text = Int(arc4random_uniform(19));
         questionAnswer2.titleLabel.text = Int(arc4random_uniform(19));

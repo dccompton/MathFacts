@@ -267,10 +267,10 @@
                         <outlet property="orLabel" destination="cK3-KY-eq1" id="tjB-Al-xYi"/>
                         <outlet property="outOfLabel" destination="W6n-6e-y5C" id="dzE-UF-0Ob"/>
                         <outlet property="playButton" destination="f1u-2o-vfP" id="THs-fd-mti"/>
-                        <outlet property="quesionAnswer1" destination="BQo-qj-EtZ" id="aRh-K0-7Da"/>
-                        <outlet property="quesionAnswer2" destination="yHy-km-fat" id="gb2-Tj-8fx"/>
-                        <outlet property="quesionAnswer3" destination="qJV-0E-VeW" id="fXT-R7-1kl"/>
-                        <outlet property="questionLable" destination="EN7-uo-sSV" id="ksq-H4-qYA"/>
+                        <outlet property="questionAnswer1" destination="BQo-qj-EtZ" id="FRV-Cu-fis"/>
+                        <outlet property="questionAnswer2" destination="yHy-km-fat" id="VhJ-Fe-Wii"/>
+                        <outlet property="questionAnswer3" destination="qJV-0E-VeW" id="3co-5x-LB4"/>
+                        <outlet property="questionLabel" destination="EN7-uo-sSV" id="Hqi-da-qE7"/>
                         <outlet property="restartButton" destination="XQn-aq-oZP" id="kfV-2z-2pd"/>
                         <outlet property="subtractionButton" destination="Ret-98-TAh" id="g5T-XB-kZQ"/>
                     </connections>
