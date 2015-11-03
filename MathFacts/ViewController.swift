@@ -42,7 +42,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var orLabel: UILabel!;
     @IBOutlet weak var subtractionButton: UIButton!;
     
+    @IBOutlet weak var testButton: UIButton!;
+    
     @IBOutlet weak var restartButton: UIButton!;
+    
+    @IBAction func testButtonPressed() {
+        
+        runAdditionQuestion();
+    }
     
     @IBAction func playButtonPressed() {
         
@@ -51,6 +58,14 @@ class ViewController: UIViewController {
         subtractionButton.hidden = false;
         
         playButton.hidden = true;
+        
+        restartButton.hidden = false;
+        
+    }
+    
+    @IBAction func test() {
+        
+        runAdditionQuestion();
         
     }
     
