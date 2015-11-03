@@ -77,33 +77,84 @@ class ViewController: UIViewController {
     
     func runAdditionQuestion() {
         
-        var firstNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        var secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        //Get the numbers to add together
+        let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        let secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        
+        //Get the correct answer and the wrong answers
         problemAnswer = firstNumber + secondNumber;
+        let firstWrongAnswer  = getWrongAnswer();
+        let secondWrongAnswer = getWrongAnswer();
         
         questionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
         
         //Build answer selections
-        var answerOrder = Int(arc4random_uniform(3)) + 1;
-        
+        //These must be randomized so that the correct answer is not always in the same position
+        let answerOrder = Int(arc4random_uniform(3)) + 1;
         switch answerOrder {
         case 1:
-            questionAnswer1.titleLabel.text = (String)problemAnswer;
-            questionAnswer2.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-            questionAnswer3.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            
+            questionAnswer1.setTitle(String(problemAnswer.value), forState: .Normal);
+            questionAnswer2.setTitle(String(firstWrongAnswer), forState: .Normal);
+            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
+            
+            questionAnswer1.tag = problemAnswer;
+            questionAnswer2.tag = firstWrongAnswer;
+            questionAnswer3.tag = secondWrongAnswer;
+            
         case 2:
-            questionAnswer1.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-            questionAnswer2.titleLabel.text = problemAnswer
-            questionAnswer3.titleLabel.text = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            
+            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
+            questionAnswer2.setTitle(String(problemAnswer.value), forState: .Normal);
+            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
+            
+            questionAnswer1.tag = firstWrongAnswer;
+            questionAnswer2.tag = problemAnswer;
+            questionAnswer3.tag = secondWrongAnswer;
+            
+        case 3:
+            
+            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
+            questionAnswer2.setTitle(String(secondWrongAnswer), forState: .Normal);
+            questionAnswer3.setTitle(String(problemAnswer.value), forState: .Normal);
+            
+            questionAnswer1.tag = firstWrongAnswer;
+            questionAnswer2.tag = secondWrongAnswer;
+            questionAnswer3.tag = problemAnswer;
+            
+        default:
+            questionLabel.text = "Error: No Calculations Found";
         }
-        
-        questionAnswer1.titleLabel.text = Int(arc4random_uniform(19));
-        questionAnswer2.titleLabel.text = Int(arc4random_uniform(19));
-        questionAnswer3.titleLabel.text = Int(arc4random_uniform(19));
 
     }
     
+    func getWrongAnswer() -> Int {
+        
+        var wrongAnswer = 0;
+        
+        repeat {
+            
+            wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            
+        } while wrongAnswer == problemAnswer;
+        
+        return wrongAnswer;
+        
+    }
+    
     func computeSubtractionFact() {
+        
+    }
+    
+    func restartMathFacts() {
+        
+        questionLabel.hidden = true;
+        questionAnswer1.hidden = true;
+        questionAnswer2.hidden = true;
+        questionAnswer3.hidden = true;
+        
+        
+        
         
     }
 }
