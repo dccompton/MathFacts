@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageBackground: UIImageView!;
     @IBOutlet weak var outOfLabel: UILabel!;
     @IBOutlet weak var imageLogo: UIImageView!;
-    @IBOutlet weak var playButton: UIButton!;
     
     @IBOutlet weak var questionLabel: UILabel!;
     @IBOutlet weak var questionAnswer1: UIButton!;
@@ -43,16 +42,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var subtractionButton: UIButton!;
     
     @IBOutlet weak var restartButton: UIButton!;
-    
-    
-    @IBAction func playButtonPressed() {
-        
-        additionButton.hidden = false;
-        orLabel.hidden = false;
-        subtractionButton.hidden = false;
-        
-        playButton.hidden = true;
-    }
     
     
     @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
@@ -89,7 +78,6 @@ class ViewController: UIViewController {
         subtractionButton.hidden = true;
         
         outOfLabel.hidden = true;
-        playButton.hidden = false;
     }
     
     func runAdditionQuestion() {
