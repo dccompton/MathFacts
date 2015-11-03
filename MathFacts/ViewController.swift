@@ -42,14 +42,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var orLabel: UILabel!;
     @IBOutlet weak var subtractionButton: UIButton!;
     
-    @IBOutlet weak var testButton: UIButton!;
-    
     @IBOutlet weak var restartButton: UIButton!;
     
-    @IBAction func testButtonPressed() {
-        
-        runAdditionQuestion();
-    }
     
     @IBAction func playButtonPressed() {
         
@@ -58,22 +52,15 @@ class ViewController: UIViewController {
         subtractionButton.hidden = false;
         
         playButton.hidden = true;
-        
-        restartButton.hidden = false;
-        
     }
     
-    @IBAction func test() {
-        
-        runAdditionQuestion();
-        
-    }
     
     @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
         
         additionButton.hidden = true;
         orLabel.hidden = true;
         subtractionButton.hidden = true;
+        restartButton.hidden = false;
         
         let buttonPressed = sender as! UIButton;
         
@@ -88,6 +75,21 @@ class ViewController: UIViewController {
     
     @IBAction func answerPressed(sender: AnyObject) {
         
+    }
+    
+    @IBAction func restartMathFacts() {
+        
+        questionLabel.hidden = true;
+        questionAnswer1.hidden = true;
+        questionAnswer2.hidden = true;
+        questionAnswer3.hidden = true;
+        
+        additionButton.hidden = true;
+        orLabel.hidden = true;
+        subtractionButton.hidden = true;
+        
+        outOfLabel.hidden = true;
+        playButton.hidden = false;
     }
     
     func runAdditionQuestion() {
@@ -117,6 +119,8 @@ class ViewController: UIViewController {
             questionAnswer2.tag = firstWrongAnswer;
             questionAnswer3.tag = secondWrongAnswer;
             
+            showAnswerChoices();
+            
         case 2:
             
             questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
@@ -126,6 +130,8 @@ class ViewController: UIViewController {
             questionAnswer1.tag = firstWrongAnswer;
             questionAnswer2.tag = problemAnswer;
             questionAnswer3.tag = secondWrongAnswer;
+            
+            showAnswerChoices();
             
         case 3:
             
@@ -137,10 +143,23 @@ class ViewController: UIViewController {
             questionAnswer2.tag = secondWrongAnswer;
             questionAnswer3.tag = problemAnswer;
             
+            showAnswerChoices();
+            
         default:
             questionLabel.text = "Error: No Calculations Found";
+            
+            showAnswerChoices();
         }
 
+    }
+    
+    func showAnswerChoices() {
+        
+        questionLabel.hidden = false;
+        questionAnswer1.hidden = false;
+        questionAnswer2.hidden = false;
+        questionAnswer3.hidden = false;
+        
     }
     
     func getWrongAnswer() -> Int {
@@ -160,17 +179,6 @@ class ViewController: UIViewController {
     func computeSubtractionFact() {
         
     }
-    
-    func restartMathFacts() {
-        
-        questionLabel.hidden = true;
-        questionAnswer1.hidden = true;
-        questionAnswer2.hidden = true;
-        questionAnswer3.hidden = true;
-        
-        
-        
-        
-    }
+
 }
 
