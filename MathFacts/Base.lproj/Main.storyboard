@@ -26,6 +26,17 @@
                                     <constraint firstAttribute="width" constant="1500" id="PbZ-G7-TCD"/>
                                 </constraints>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 x 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uo-sSV" userLabel="problemLabel">
+                                <rect key="frame" x="186" y="172" width="228" height="43"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="NM2-vF-fZa"/>
+                                    <constraint firstAttribute="width" constant="228" id="egl-xe-XTe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Math-Facts" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-k8-kp1" userLabel="imgLogo">
                                 <rect key="frame" x="138" y="20" width="325" height="50"/>
                                 <animations/>
@@ -93,19 +104,27 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx0-SN-6cD">
-                                <rect key="frame" x="240" y="550" width="121" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx0-SN-6cD" userLabel="doneButton">
+                                <rect key="frame" x="186" y="553" width="228" height="39"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="53g-sY-pvl"/>
                                     <constraint firstAttribute="width" constant="121" id="Cp7-P6-06p"/>
+                                    <constraint firstAttribute="width" constant="228" id="gKs-dt-SpG"/>
                                     <constraint firstAttribute="height" constant="30" id="ray-bV-4w2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Restart">
+                                <state key="normal" title="Finished">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Cp7-P6-06p"/>
+                                        <exclude reference="ray-bV-4w2"/>
+                                    </mask>
+                                </variation>
                                 <connections>
-                                    <action selector="restartMathFacts" destination="BYZ-38-t0r" eventType="touchUpInside" id="b6j-5C-lzd"/>
+                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="y3I-0u-9NS"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIl-7c-dD1" userLabel="questionAnswer2">
@@ -156,7 +175,7 @@
                                     <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJn-Ml-4v5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 out of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kT-OF-oe3" userLabel="outOfLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 out of 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kT-OF-oe3" userLabel="outOfLabel">
                                 <rect key="frame" x="138" y="78" width="325" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -192,17 +211,47 @@
                                     <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Uf-io-dcd"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 x 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uo-sSV" userLabel="problemLabel">
-                                <rect key="frame" x="186" y="172" width="228" height="43"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrx-no-kYi" userLabel="nextButton">
+                                <rect key="frame" x="186" y="483" width="228" height="39"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="NM2-vF-fZa"/>
-                                    <constraint firstAttribute="width" constant="228" id="egl-xe-XTe"/>
+                                    <constraint firstAttribute="width" constant="228" id="5CZ-7O-tPE"/>
+                                    <constraint firstAttribute="height" constant="39" id="8hE-KL-ggR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                <state key="normal" title="Next --&gt;">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTa-g4-5Pu"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 right, 1 wrong out of 6 questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRg-Rm-m7A" userLabel="answerSumLabel">
+                                <rect key="frame" x="20" y="107" width="560" height="35"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="B2I-pg-rrG"/>
+                                    <constraint firstAttribute="width" constant="560" id="K57-Lk-qMF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHC-tg-yYH" userLabel="playAgainButton">
+                                <rect key="frame" x="138" y="150" width="325" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rnC-L2-Us6"/>
+                                    <constraint firstAttribute="width" constant="325" id="wJs-Kc-pUH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Play Again?">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="oYg-L2-aRi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -210,12 +259,14 @@
                             <constraint firstItem="EN7-uo-sSV" firstAttribute="top" secondItem="MPx-k8-kp1" secondAttribute="bottom" constant="102" id="19l-Ve-wHN"/>
                             <constraint firstItem="MIl-7c-dD1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1WK-z5-z1w"/>
                             <constraint firstItem="MIl-7c-dD1" firstAttribute="top" secondItem="PFq-V2-Yh4" secondAttribute="bottom" constant="8" id="2q0-O8-nU4"/>
+                            <constraint firstItem="YHC-tg-yYH" firstAttribute="top" secondItem="HRg-Rm-m7A" secondAttribute="bottom" constant="8" id="3PR-gg-h9c"/>
                             <constraint firstItem="6Av-4n-r6H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="474-qU-7iC"/>
                             <constraint firstItem="MIl-7c-dD1" firstAttribute="top" secondItem="fWM-Nd-rvV" secondAttribute="bottom" constant="42" id="5wk-0n-stQ"/>
                             <constraint firstItem="EN7-uo-sSV" firstAttribute="top" secondItem="1kT-OF-oe3" secondAttribute="bottom" constant="73" id="75j-0w-YoN"/>
                             <constraint firstItem="6Av-4n-r6H" firstAttribute="top" secondItem="qTN-Od-Se0" secondAttribute="bottom" constant="8" id="ALI-rc-AbG"/>
                             <constraint firstItem="1kT-OF-oe3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aql-SP-bnv"/>
                             <constraint firstItem="nx0-SN-6cD" firstAttribute="top" secondItem="6Av-4n-r6H" secondAttribute="bottom" constant="109" id="BHv-qK-xAB"/>
+                            <constraint firstItem="YHC-tg-yYH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bmc-ii-E7M"/>
                             <constraint firstItem="nx0-SN-6cD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DNu-HR-fxY"/>
                             <constraint firstItem="fWM-Nd-rvV" firstAttribute="top" secondItem="rJm-gx-00c" secondAttribute="bottom" constant="8" id="DkO-PG-Msq"/>
                             <constraint firstItem="fWM-Nd-rvV" firstAttribute="top" secondItem="EN7-uo-sSV" secondAttribute="bottom" constant="48" id="EcH-V8-i91"/>
@@ -241,17 +292,22 @@
                             <constraint firstItem="EN7-uo-sSV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fln-RP-11U"/>
                             <constraint firstItem="MPx-k8-kp1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="giq-DV-q2L"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nx0-SN-6cD" secondAttribute="bottom" constant="20" id="haw-1Y-iWq"/>
+                            <constraint firstItem="nx0-SN-6cD" firstAttribute="top" secondItem="vrx-no-kYi" secondAttribute="bottom" constant="11" id="ie2-eT-iKR"/>
+                            <constraint firstItem="vrx-no-kYi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kjI-iH-YIP"/>
                             <constraint firstItem="6Av-4n-r6H" firstAttribute="top" secondItem="qTN-Od-Se0" secondAttribute="bottom" constant="8" id="klT-77-ayi"/>
+                            <constraint firstItem="nx0-SN-6cD" firstAttribute="top" secondItem="vrx-no-kYi" secondAttribute="bottom" constant="31" id="mj2-rP-1dO"/>
                             <constraint firstItem="fWM-Nd-rvV" firstAttribute="top" secondItem="EN7-uo-sSV" secondAttribute="bottom" constant="33" id="n55-hR-fPG"/>
                             <constraint firstItem="MIl-7c-dD1" firstAttribute="top" secondItem="fWM-Nd-rvV" secondAttribute="bottom" constant="42" id="nRS-Ym-5TD"/>
                             <constraint firstItem="MPx-k8-kp1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nh7-7e-99s"/>
                             <constraint firstItem="MPx-k8-kp1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oXO-ox-OLs"/>
+                            <constraint firstItem="HRg-Rm-m7A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ogB-E4-8gv"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4dP-QS-lL7" secondAttribute="bottom" constant="-836" id="ozs-Gv-bZc"/>
                             <constraint firstItem="EN7-uo-sSV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pvv-ul-0Iu"/>
                             <constraint firstItem="6Av-4n-r6H" firstAttribute="top" secondItem="qTN-Od-Se0" secondAttribute="bottom" constant="8" id="spZ-xA-unU"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-383" id="tnE-bx-Qqv"/>
                             <constraint firstItem="4dP-QS-lL7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-64" id="w23-ii-ozu"/>
                             <constraint firstItem="MPx-k8-kp1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wre-gu-Gf8"/>
+                            <constraint firstItem="HRg-Rm-m7A" firstAttribute="top" secondItem="1kT-OF-oe3" secondAttribute="bottom" constant="8" id="wug-5T-1ZA"/>
                             <constraint firstItem="fWM-Nd-rvV" firstAttribute="top" secondItem="EN7-uo-sSV" secondAttribute="bottom" constant="48" id="xVR-2m-GEj"/>
                             <constraint firstItem="qTN-Od-Se0" firstAttribute="top" secondItem="PFq-V2-Yh4" secondAttribute="bottom" constant="37" id="yEI-4Z-xtH"/>
                             <constraint firstItem="MIl-7c-dD1" firstAttribute="top" secondItem="rJm-gx-00c" secondAttribute="bottom" constant="40" id="ymb-WN-g6Q"/>
@@ -278,20 +334,24 @@
                                 <exclude reference="klT-77-ayi"/>
                                 <exclude reference="spZ-xA-unU"/>
                                 <exclude reference="BHv-qK-xAB"/>
+                                <exclude reference="ie2-eT-iKR"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="additionButton" destination="rJm-gx-00c" id="LHw-EP-1VA"/>
+                        <outlet property="answerSumLabel" destination="HRg-Rm-m7A" id="vIo-M0-OXW"/>
+                        <outlet property="doneButton" destination="nx0-SN-6cD" id="hvQ-C4-0NE"/>
                         <outlet property="imageBackground" destination="4dP-QS-lL7" id="lXC-vA-Rez"/>
                         <outlet property="imageLogo" destination="MPx-k8-kp1" id="TSe-Wz-mde"/>
+                        <outlet property="nextButton" destination="vrx-no-kYi" id="deM-Pe-jkc"/>
                         <outlet property="orLabel" destination="PFq-V2-Yh4" id="U7Y-e2-zeZ"/>
                         <outlet property="outOfLabel" destination="1kT-OF-oe3" id="hpO-Pr-pNY"/>
+                        <outlet property="playAgainButton" destination="YHC-tg-yYH" id="EON-on-rki"/>
                         <outlet property="questionAnswer1" destination="fWM-Nd-rvV" id="2M3-0V-ARa"/>
                         <outlet property="questionAnswer2" destination="MIl-7c-dD1" id="ziq-ON-JFN"/>
                         <outlet property="questionAnswer3" destination="6Av-4n-r6H" id="jI8-Wu-n8c"/>
                         <outlet property="questionLabel" destination="EN7-uo-sSV" id="Hqi-da-qE7"/>
-                        <outlet property="restartButton" destination="nx0-SN-6cD" id="aSm-FU-gdH"/>
                         <outlet property="subtractionButton" destination="qTN-Od-Se0" id="2u2-7L-CuB"/>
                     </connections>
                 </viewController>

@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     //IBOutlets
     @IBOutlet weak var imageBackground: UIImageView!;
     @IBOutlet weak var outOfLabel: UILabel!;
+    @IBOutlet weak var answerSumLabel: UILabel!;
+    @IBOutlet weak var playAgainButton: UIButton!;
     @IBOutlet weak var imageLogo: UIImageView!;
     
     @IBOutlet weak var questionLabel: UILabel!;
@@ -43,7 +45,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var orLabel: UILabel!;
     @IBOutlet weak var subtractionButton: UIButton!;
     
-    @IBOutlet weak var restartButton: UIButton!;
+    
+    @IBOutlet weak var nextButton: UIButton!;
+    @IBOutlet weak var doneButton: UIButton!;
+    
+    
+    @IBAction func playAgainButtonPressed() {
+
+        answerSumLabel.hidden = true;
+        playAgainButton.hidden = true;
+        
+        
+        additionButton.hidden = false;
+        orLabel.hidden = false;
+        subtractionButton.hidden = false;
+        
+    }
+    
+    @IBAction func nextButtonPressed() {
+        
+        clearOutBackgroundColors();
+        runAdditionQuestion();
+        
+        nextButton.hidden = true;
+    }
     
     
     @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
@@ -51,7 +76,7 @@ class ViewController: UIViewController {
         additionButton.hidden = true;
         orLabel.hidden = true;
         subtractionButton.hidden = true;
-        restartButton.hidden = false;
+        doneButton.hidden = false;
         
         let buttonPressed = sender as! UIButton;
         
@@ -69,12 +94,13 @@ class ViewController: UIViewController {
         let answerButtonPressed = sender as! UIButton;
         
         if answerButtonPressed.tag == problemAnswer {
-            numberOfProblemsAnsweredCorrectly += 1;
             
-            answerButtonPressed.backgroundColor = UIColor.greenColor();
+            numberOfProblemsAnsweredCorrectly += 1;
+            runAdditionQuestion();
             
         } else {
             
+            nextButton.hidden = false;
             displayCorrectProblemAnswer();
         }
         
@@ -82,16 +108,17 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func restartMathFacts() {
+    @IBAction func doneButtonPressed() {
+        
+        answerSumLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(currentProblemNumber - numberOfProblemsAnsweredCorrectly) wrong, out of \(currentProblemNumber)";
+        
+        answerSumLabel.hidden = false;
+        playAgainButton.hidden = false;
         
         questionLabel.hidden = true;
         questionAnswer1.hidden = true;
         questionAnswer2.hidden = true;
         questionAnswer3.hidden = true;
-        
-        additionButton.hidden = false;
-        orLabel.hidden = false;
-        subtractionButton.hidden = false;
         
         outOfLabel.hidden = true;
         
