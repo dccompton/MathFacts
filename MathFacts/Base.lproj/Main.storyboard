@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="19809-NSARH7" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-QS-lL7" userLabel="imgBackground">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="19809-NSARH7" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-QS-lL7" userLabel="imgBackground">
                                 <rect key="frame" x="-382" y="-185" width="1500" height="1500"/>
                                 <animations/>
                                 <constraints>
@@ -26,17 +26,6 @@
                                     <constraint firstAttribute="width" constant="1500" id="PbZ-G7-TCD"/>
                                 </constraints>
                             </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 x 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uo-sSV" userLabel="problemLabel">
-                                <rect key="frame" x="186" y="172" width="228" height="43"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="NM2-vF-fZa"/>
-                                    <constraint firstAttribute="width" constant="228" id="egl-xe-XTe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Math-Facts" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-k8-kp1" userLabel="imgLogo">
                                 <rect key="frame" x="138" y="20" width="325" height="50"/>
                                 <animations/>
@@ -203,6 +192,17 @@
                                     <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Uf-io-dcd"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 x 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uo-sSV" userLabel="problemLabel">
+                                <rect key="frame" x="186" y="172" width="228" height="43"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="NM2-vF-fZa"/>
+                                    <constraint firstAttribute="width" constant="228" id="egl-xe-XTe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -249,8 +249,8 @@
                             <constraint firstAttribute="bottomMargin" secondItem="4dP-QS-lL7" secondAttribute="bottom" constant="-836" id="ozs-Gv-bZc"/>
                             <constraint firstItem="EN7-uo-sSV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pvv-ul-0Iu"/>
                             <constraint firstItem="6Av-4n-r6H" firstAttribute="top" secondItem="qTN-Od-Se0" secondAttribute="bottom" constant="8" id="spZ-xA-unU"/>
-                            <constraint firstItem="4dP-QS-lL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-383" id="tnE-bx-Qqv"/>
-                            <constraint firstItem="4dP-QS-lL7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-64" id="w23-ii-ozu"/>
+                            <constraint firstItem="4dP-QS-lL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-383" id="tnE-bx-Qqv"/>
+                            <constraint firstItem="4dP-QS-lL7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-64" id="w23-ii-ozu"/>
                             <constraint firstItem="MPx-k8-kp1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wre-gu-Gf8"/>
                             <constraint firstItem="fWM-Nd-rvV" firstAttribute="top" secondItem="EN7-uo-sSV" secondAttribute="bottom" constant="48" id="xVR-2m-GEj"/>
                             <constraint firstItem="qTN-Od-Se0" firstAttribute="top" secondItem="PFq-V2-Yh4" secondAttribute="bottom" constant="37" id="yEI-4Z-xtH"/>

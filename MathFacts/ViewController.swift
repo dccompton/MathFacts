@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     //Variables
     var problemAnswer: Int = 0;
-    var numberOfProblemsAnswered: Int = 0;
+    var currentProblemNumber: Int = 0;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
     //IBOutlets
@@ -66,6 +66,16 @@ class ViewController: UIViewController {
     
     @IBAction func answerPressed(sender: AnyObject) {
         
+        let answerButtonPressed = sender as! UIButton;
+        
+        //if answerButtonPressed.tag = problemAnswer {
+        //    numberOfProblemsAnsweredCorrectly += 1;
+            
+            
+        //}
+        
+        currentProblemNumber += 1;
+        
     }
     
     @IBAction func restartMathFacts() {
@@ -83,6 +93,9 @@ class ViewController: UIViewController {
     }
     
     func runAdditionQuestion() {
+        
+        outOfLabel.text = "\(currentProblemNumber) out of \(MAX_PROBLEMS)";
+        outOfLabel.hidden = false;
         
         //Get the numbers to add together
         let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
