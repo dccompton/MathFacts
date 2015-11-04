@@ -68,11 +68,15 @@ class ViewController: UIViewController {
         
         let answerButtonPressed = sender as! UIButton;
         
-        //if answerButtonPressed.tag = problemAnswer {
-        //    numberOfProblemsAnsweredCorrectly += 1;
+        if answerButtonPressed.tag == problemAnswer {
+            numberOfProblemsAnsweredCorrectly += 1;
             
+            answerButtonPressed.backgroundColor = UIColor.greenColor();
             
-        //}
+        } else {
+            
+            displayCorrectProblemAnswer();
+        }
         
         currentProblemNumber += 1;
         
@@ -85,14 +89,44 @@ class ViewController: UIViewController {
         questionAnswer2.hidden = true;
         questionAnswer3.hidden = true;
         
-        additionButton.hidden = true;
-        orLabel.hidden = true;
-        subtractionButton.hidden = true;
+        additionButton.hidden = false;
+        orLabel.hidden = false;
+        subtractionButton.hidden = false;
         
         outOfLabel.hidden = true;
+        
+        clearOutBackgroundColors();
+    }
+    
+    func clearOutBackgroundColors() {
+        
+        questionAnswer1.backgroundColor = nil;
+        questionAnswer2.backgroundColor = nil;
+        questionAnswer3.backgroundColor = nil;
+    }
+    
+    func displayCorrectProblemAnswer() {
+        
+        if questionAnswer1.tag == problemAnswer {
+            questionAnswer1.backgroundColor = UIColor.greenColor();
+            questionAnswer2.backgroundColor = UIColor.redColor();
+            questionAnswer3.backgroundColor = UIColor.redColor();
+        }
+        else if questionAnswer2.tag == problemAnswer {
+            questionAnswer1.backgroundColor = UIColor.redColor();
+            questionAnswer2.backgroundColor = UIColor.greenColor();
+            questionAnswer3.backgroundColor = UIColor.redColor();
+        }
+        else if questionAnswer3.tag == problemAnswer {
+            questionAnswer1.backgroundColor = UIColor.redColor();
+            questionAnswer2.backgroundColor = UIColor.redColor();
+            questionAnswer3.backgroundColor = UIColor.greenColor();
+        }
     }
     
     func runAdditionQuestion() {
+        
+        clearOutBackgroundColors();
         
         outOfLabel.text = "\(currentProblemNumber) out of \(MAX_PROBLEMS)";
         outOfLabel.hidden = false;
