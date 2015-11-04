@@ -99,11 +99,11 @@ class ViewController: UIViewController {
         switch answerOrder {
         case 1:
             
-            questionAnswer1.setTitle(String(problemAnswer.value), forState: .Normal);
+            questionAnswer1.setTitle(String(problemAnswer), forState: .Normal);
             questionAnswer2.setTitle(String(firstWrongAnswer), forState: .Normal);
             questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
             
-            questionAnswer1.tag = problemAnswer;
+            questionAnswer1.tag = Int(problemAnswer);
             questionAnswer2.tag = firstWrongAnswer;
             questionAnswer3.tag = secondWrongAnswer;
             
@@ -112,11 +112,11 @@ class ViewController: UIViewController {
         case 2:
             
             questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
-            questionAnswer2.setTitle(String(problemAnswer.value), forState: .Normal);
+            questionAnswer2.setTitle(String(problemAnswer), forState: .Normal);
             questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
             
             questionAnswer1.tag = firstWrongAnswer;
-            questionAnswer2.tag = problemAnswer;
+            questionAnswer2.tag = Int(problemAnswer);
             questionAnswer3.tag = secondWrongAnswer;
             
             showAnswerChoices();
@@ -125,11 +125,11 @@ class ViewController: UIViewController {
             
             questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
             questionAnswer2.setTitle(String(secondWrongAnswer), forState: .Normal);
-            questionAnswer3.setTitle(String(problemAnswer.value), forState: .Normal);
+            questionAnswer3.setTitle(String(problemAnswer), forState: .Normal);
             
             questionAnswer1.tag = firstWrongAnswer;
             questionAnswer2.tag = secondWrongAnswer;
-            questionAnswer3.tag = problemAnswer;
+            questionAnswer3.tag = Int(problemAnswer);
             
             showAnswerChoices();
             
