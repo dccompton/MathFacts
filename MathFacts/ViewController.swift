@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     
     //Variables
     var problemAnswer: Int = 0;
+    var numberOfProblemsAnswered: Int = 0;
+    var numberOfProblemsAnsweredCorrectly: Int = 0;
     
     //IBOutlets
     @IBOutlet weak var imageBackground: UIImageView!;
