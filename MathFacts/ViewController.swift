@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     //Variables
     var problemAnswer: Int = 0;
-    var currentProblemNumber: Int = 0;
+    var currentProblemNumber: Int = 1;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
     //IBOutlets
@@ -55,10 +55,14 @@ class ViewController: UIViewController {
         answerSumLabel.hidden = true;
         playAgainButton.hidden = true;
         
-        
         additionButton.hidden = false;
         orLabel.hidden = false;
         subtractionButton.hidden = false;
+        
+        //Reset the counters
+        problemAnswer = 0;
+        currentProblemNumber = 1;
+        numberOfProblemsAnsweredCorrectly = 0;
         
     }
     
@@ -93,6 +97,8 @@ class ViewController: UIViewController {
         
         let answerButtonPressed = sender as! UIButton;
         
+        currentProblemNumber += 1;
+        
         if answerButtonPressed.tag == problemAnswer {
             
             numberOfProblemsAnsweredCorrectly += 1;
@@ -103,14 +109,13 @@ class ViewController: UIViewController {
             nextButton.hidden = false;
             displayCorrectProblemAnswer();
         }
-        
-        currentProblemNumber += 1;
-        
     }
     
     @IBAction func doneButtonPressed() {
         
         answerSumLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(currentProblemNumber - numberOfProblemsAnsweredCorrectly) wrong, out of \(currentProblemNumber)";
+        
+        outOfLabel.hidden = true;
         
         answerSumLabel.hidden = false;
         playAgainButton.hidden = false;
