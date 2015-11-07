@@ -9,5 +9,10 @@
 import UIKit
 
 class AdditionViewController: UIViewController {
+    
+    
+    @IBOutlet weak var problemQuestionLabel: UIStackView!
+    
+    
 
 }

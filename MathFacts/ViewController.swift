@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var additionButton: UIButton!;
     @IBOutlet weak var subtractionButton: UIButton!;
+    @IBOutlet weak var multiplicationButton: UIButton!
     
     
 //    @IBOutlet weak var nextButton: UIButton!;
@@ -73,22 +74,25 @@ class ViewController: UIViewController {
 //    }
     
     
-    @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
-        
-        additionButton.hidden = true;
-        subtractionButton.hidden = true;
-//        doneButton.hidden = false;
-        
-        let buttonPressed = sender as! UIButton;
-        
-        if buttonPressed.tag == 1 {
-            runAdditionQuestion();
-        }
-        else if buttonPressed.tag == 2 {
-            computeSubtractionFact();
-        }
-        
-    }
+//    @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
+//        
+//        additionButton.hidden = true;
+//        subtractionButton.hidden = true;
+////        doneButton.hidden = false;
+//        
+//        let buttonPressed = sender as! UIButton;
+//        
+//        if buttonPressed.tag == 1 {
+//            runAdditionQuestion();
+//        }
+//        else if buttonPressed.tag == 2 {
+//            computeSubtractionFact();
+//        }
+//        else if buttonPressed.tag == 3 {
+//            
+//        }
+//        
+//    }
     
     @IBAction func answerPressed(sender: AnyObject) {
         
