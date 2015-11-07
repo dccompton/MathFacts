@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B2B79CC1BED4546002E55B9 /* AdditionViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B79CB1BED4546002E55B9 /* AdditionViewControler.swift */; };
 		2BA03DE41BE6890C005A36B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03DE31BE6890C005A36B4 /* AppDelegate.swift */; };
 		2BA03DE61BE6890C005A36B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03DE51BE6890C005A36B4 /* ViewController.swift */; };
 		2BA03DE91BE6890C005A36B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA03DE71BE6890C005A36B4 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B2B79CB1BED4546002E55B9 /* AdditionViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionViewControler.swift; sourceTree = "<group>"; };
 		2BA03DE01BE6890C005A36B4 /* MathFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA03DE31BE6890C005A36B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA03DE51BE6890C005A36B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				2BA03DE31BE6890C005A36B4 /* AppDelegate.swift */,
 				2BA03DE51BE6890C005A36B4 /* ViewController.swift */,
+				2B2B79CB1BED4546002E55B9 /* AdditionViewControler.swift */,
 				2BA03DE71BE6890C005A36B4 /* Main.storyboard */,
 				2BA03DEA1BE6890C005A36B4 /* Assets.xcassets */,
 				2BA03DEC1BE6890C005A36B4 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2B79CC1BED4546002E55B9 /* AdditionViewControler.swift in Sources */,
 				2BA03DE61BE6890C005A36B4 /* ViewController.swift in Sources */,
 				2BA03DE41BE6890C005A36B4 /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +488,7 @@
 				2BA03E0A1BE6890D005A36B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BA03E0B1BE6890D005A36B4 /* Build configuration list for PBXNativeTarget "MathFactsTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				2BA03E0D1BE6890D005A36B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BA03E0E1BE6890D005A36B4 /* Build configuration list for PBXNativeTarget "MathFactsUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				2BA03E101BE6890D005A36B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

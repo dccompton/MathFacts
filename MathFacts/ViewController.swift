@@ -30,57 +30,54 @@ class ViewController: UIViewController {
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
     //IBOutlets
-    @IBOutlet weak var imageBackground: UIImageView!;
-    @IBOutlet weak var outOfLabel: UILabel!;
-    @IBOutlet weak var answerSumLabel: UILabel!;
-    @IBOutlet weak var playAgainButton: UIButton!;
+//    @IBOutlet weak var imageBackground: UIImageView!;
+//    @IBOutlet weak var outOfLabel: UILabel!;
+//    @IBOutlet weak var answerSumLabel: UILabel!;
+//    @IBOutlet weak var playAgainButton: UIButton!;
     @IBOutlet weak var imageLogo: UIImageView!;
     
-    @IBOutlet weak var questionLabel: UILabel!;
-    @IBOutlet weak var questionAnswer1: UIButton!;
-    @IBOutlet weak var questionAnswer2: UIButton!;
-    @IBOutlet weak var questionAnswer3: UIButton!;
+//    @IBOutlet weak var questionLabel: UILabel!;
+//    @IBOutlet weak var questionAnswer1: UIButton!;
+//    @IBOutlet weak var questionAnswer2: UIButton!;
+//    @IBOutlet weak var questionAnswer3: UIButton!;
     
     @IBOutlet weak var additionButton: UIButton!;
-    @IBOutlet weak var orLabel: UILabel!;
     @IBOutlet weak var subtractionButton: UIButton!;
     
     
-    @IBOutlet weak var nextButton: UIButton!;
-    @IBOutlet weak var doneButton: UIButton!;
+//    @IBOutlet weak var nextButton: UIButton!;
+//    @IBOutlet weak var doneButton: UIButton!;
     
     
-    @IBAction func playAgainButtonPressed() {
-
-        answerSumLabel.hidden = true;
-        playAgainButton.hidden = true;
-        
-        additionButton.hidden = false;
-        orLabel.hidden = false;
-        subtractionButton.hidden = false;
-        
-        //Reset the counters
-        problemAnswer = 0;
-        currentProblemNumber = 1;
-        numberOfProblemsAnsweredCorrectly = 0;
-        
-    }
+//    @IBAction func playAgainButtonPressed() {
+//
+//        answerSumLabel.hidden = true;
+//        playAgainButton.hidden = true;
+//        
+//        additionButton.hidden = false;
+//        subtractionButton.hidden = false;
+//        
+//        //Reset the counters
+//        problemAnswer = 0;
+//        currentProblemNumber = 1;
+//        numberOfProblemsAnsweredCorrectly = 0;
+//        
+//    }
     
-    @IBAction func nextButtonPressed() {
-        
-        clearOutBackgroundColors();
-        runAdditionQuestion();
-        
-        nextButton.hidden = true;
-    }
+//    @IBAction func nextButtonPressed() {
+//        
+//        clearOutBackgroundColors();
+//        runAdditionQuestion();
+//        
+//        nextButton.hidden = true;
+//    }
     
     
     @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
         
         additionButton.hidden = true;
-        orLabel.hidden = true;
         subtractionButton.hidden = true;
-        doneButton.hidden = false;
+//        doneButton.hidden = false;
         
         let buttonPressed = sender as! UIButton;
         
@@ -106,62 +103,62 @@ class ViewController: UIViewController {
             
         } else {
             
-            nextButton.hidden = false;
-            displayCorrectProblemAnswer();
+            //nextButton.hidden = false;
+//            displayCorrectProblemAnswer();
         }
     }
     
-    @IBAction func doneButtonPressed() {
-        
-        answerSumLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(currentProblemNumber - numberOfProblemsAnsweredCorrectly) wrong, out of \(currentProblemNumber)";
-        
-        outOfLabel.hidden = true;
-        
-        answerSumLabel.hidden = false;
-        playAgainButton.hidden = false;
-        
-        questionLabel.hidden = true;
-        questionAnswer1.hidden = true;
-        questionAnswer2.hidden = true;
-        questionAnswer3.hidden = true;
-        
-        outOfLabel.hidden = true;
-        
-        clearOutBackgroundColors();
-    }
+//    @IBAction func doneButtonPressed() {
+//        
+//        answerSumLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(currentProblemNumber - numberOfProblemsAnsweredCorrectly) wrong, out of \(currentProblemNumber)";
+//        
+//        outOfLabel.hidden = true;
+//        
+//        answerSumLabel.hidden = false;
+//        playAgainButton.hidden = false;
+//        
+//        questionLabel.hidden = true;
+//        questionAnswer1.hidden = true;
+//        questionAnswer2.hidden = true;
+//        questionAnswer3.hidden = true;
+//        
+//        outOfLabel.hidden = true;
+//        
+//        clearOutBackgroundColors();
+//    }
     
-    func clearOutBackgroundColors() {
-        
-        questionAnswer1.backgroundColor = nil;
-        questionAnswer2.backgroundColor = nil;
-        questionAnswer3.backgroundColor = nil;
-    }
+//    func clearOutBackgroundColors() {
+//        
+//        questionAnswer1.backgroundColor = nil;
+//        questionAnswer2.backgroundColor = nil;
+//        questionAnswer3.backgroundColor = nil;
+//    }
     
-    func displayCorrectProblemAnswer() {
-        
-        if questionAnswer1.tag == problemAnswer {
-            questionAnswer1.backgroundColor = UIColor.greenColor();
-            questionAnswer2.backgroundColor = UIColor.redColor();
-            questionAnswer3.backgroundColor = UIColor.redColor();
-        }
-        else if questionAnswer2.tag == problemAnswer {
-            questionAnswer1.backgroundColor = UIColor.redColor();
-            questionAnswer2.backgroundColor = UIColor.greenColor();
-            questionAnswer3.backgroundColor = UIColor.redColor();
-        }
-        else if questionAnswer3.tag == problemAnswer {
-            questionAnswer1.backgroundColor = UIColor.redColor();
-            questionAnswer2.backgroundColor = UIColor.redColor();
-            questionAnswer3.backgroundColor = UIColor.greenColor();
-        }
-    }
+//    func displayCorrectProblemAnswer() {
+//        
+//        if questionAnswer1.tag == problemAnswer {
+//            questionAnswer1.backgroundColor = UIColor.greenColor();
+//            questionAnswer2.backgroundColor = UIColor.redColor();
+//            questionAnswer3.backgroundColor = UIColor.redColor();
+//        }
+//        else if questionAnswer2.tag == problemAnswer {
+//            questionAnswer1.backgroundColor = UIColor.redColor();
+//            questionAnswer2.backgroundColor = UIColor.greenColor();
+//            questionAnswer3.backgroundColor = UIColor.redColor();
+//        }
+//        else if questionAnswer3.tag == problemAnswer {
+//            questionAnswer1.backgroundColor = UIColor.redColor();
+//            questionAnswer2.backgroundColor = UIColor.redColor();
+//            questionAnswer3.backgroundColor = UIColor.greenColor();
+//        }
+//    }
     
     func runAdditionQuestion() {
         
-        clearOutBackgroundColors();
+//        clearOutBackgroundColors();
         
-        outOfLabel.text = "\(currentProblemNumber) out of \(MAX_PROBLEMS)";
-        outOfLabel.hidden = false;
+//        outOfLabel.text = "\(currentProblemNumber) out of \(MAX_PROBLEMS)";
+//        outOfLabel.hidden = false;
         
         //Get the numbers to add together
         let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
@@ -172,7 +169,7 @@ class ViewController: UIViewController {
         let firstWrongAnswer  = getWrongAnswer();
         let secondWrongAnswer = getWrongAnswer();
         
-        questionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
+//        questionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
         
         //Build answer selections
         //These must be randomized so that the correct answer is not always in the same position
@@ -180,42 +177,42 @@ class ViewController: UIViewController {
         switch answerOrder {
         case 1:
             
-            questionAnswer1.setTitle(String(problemAnswer), forState: .Normal);
-            questionAnswer2.setTitle(String(firstWrongAnswer), forState: .Normal);
-            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
-            
-            questionAnswer1.tag = Int(problemAnswer);
-            questionAnswer2.tag = firstWrongAnswer;
-            questionAnswer3.tag = secondWrongAnswer;
+//            questionAnswer1.setTitle(String(problemAnswer), forState: .Normal);
+//            questionAnswer2.setTitle(String(firstWrongAnswer), forState: .Normal);
+//            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
+//            
+//            questionAnswer1.tag = Int(problemAnswer);
+//            questionAnswer2.tag = firstWrongAnswer;
+//            questionAnswer3.tag = secondWrongAnswer;
             
             showAnswerChoices();
             
         case 2:
             
-            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
-            questionAnswer2.setTitle(String(problemAnswer), forState: .Normal);
-            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
-            
-            questionAnswer1.tag = firstWrongAnswer;
-            questionAnswer2.tag = Int(problemAnswer);
-            questionAnswer3.tag = secondWrongAnswer;
+//            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
+//            questionAnswer2.setTitle(String(problemAnswer), forState: .Normal);
+//            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
+//            
+//            questionAnswer1.tag = firstWrongAnswer;
+//            questionAnswer2.tag = Int(problemAnswer);
+//            questionAnswer3.tag = secondWrongAnswer;
             
             showAnswerChoices();
             
         case 3:
             
-            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
-            questionAnswer2.setTitle(String(secondWrongAnswer), forState: .Normal);
-            questionAnswer3.setTitle(String(problemAnswer), forState: .Normal);
-            
-            questionAnswer1.tag = firstWrongAnswer;
-            questionAnswer2.tag = secondWrongAnswer;
-            questionAnswer3.tag = Int(problemAnswer);
+//            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
+//            questionAnswer2.setTitle(String(secondWrongAnswer), forState: .Normal);
+//            questionAnswer3.setTitle(String(problemAnswer), forState: .Normal);
+//            
+//            questionAnswer1.tag = firstWrongAnswer;
+//            questionAnswer2.tag = secondWrongAnswer;
+//            questionAnswer3.tag = Int(problemAnswer);
             
             showAnswerChoices();
             
         default:
-            questionLabel.text = "Error: No Calculations Found";
+//            questionLabel.text = "Error: No Calculations Found";
             
             showAnswerChoices();
         }
@@ -224,10 +221,10 @@ class ViewController: UIViewController {
     
     func showAnswerChoices() {
         
-        questionLabel.hidden = false;
-        questionAnswer1.hidden = false;
-        questionAnswer2.hidden = false;
-        questionAnswer3.hidden = false;
+//        questionLabel.hidden = false;
+//        questionAnswer1.hidden = false;
+//        questionAnswer2.hidden = false;
+//        questionAnswer3.hidden = false;
         
     }
     
