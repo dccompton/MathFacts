@@ -45,6 +45,16 @@ class AdditionViewController: UIViewController {
     var currentProblemNumber: Int = 1;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "answerSummary" {
+            let svc = segue.destinationViewController as! SummaryViewController;
+            
+            svc.numberOfProblemsAnsweredCorrectly = numberOfProblemsAnsweredCorrectly;
+            svc.lastProblemNumberAnswered = currentProblemNumber;
+            
+        }
+    }
+    
     
     @IBAction func answerPressed(sender: AnyObject) {
         
