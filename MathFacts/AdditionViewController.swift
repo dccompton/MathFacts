@@ -14,12 +14,18 @@ class AdditionViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        outOfLabel.hidden = true;
+        
         nextButton.hidden = true;
         
         problemQuestionLabel.hidden = true;
         questionAnswer1.hidden = true;
         questionAnswer2.hidden = true;
         questionAnswer3.hidden = true;
+        
+        currentProblemNumber = 0;
+        numberOfProblemsAnsweredCorrectly = 0;
+        problemAnswer = 0;
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +48,7 @@ class AdditionViewController: UIViewController {
     
     //Variables
     var problemAnswer: Int = 0;
-    var currentProblemNumber: Int = 1;
+    var currentProblemNumber: Int = 0;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -55,16 +61,21 @@ class AdditionViewController: UIViewController {
         }
     }
     
+    @IBAction func finishedPress(sender: AnyObject) {
+        
+        if nextButton.hidden == true {
+         
+            currentProblemNumber--;
+        }
+    }
     
     @IBAction func answerPressed(sender: AnyObject) {
         
         let answerButtonPressed = sender as! UIButton;
         
-        currentProblemNumber += 1;
-        
         if answerButtonPressed.tag == problemAnswer {
             
-            numberOfProblemsAnsweredCorrectly += 1;
+            numberOfProblemsAnsweredCorrectly++;
             runAdditionQuestion();
             
         } else {
@@ -75,6 +86,7 @@ class AdditionViewController: UIViewController {
     }
     
     @IBAction func goPressed() {
+        outOfLabel.hidden = false;
         goButton.hidden = true;
         problemQuestionLabel.hidden = false;
         showAnswerChoices();
@@ -94,7 +106,7 @@ class AdditionViewController: UIViewController {
         
         clearOutBackgroundColors();
         
-        outOfLabel.text = "\(currentProblemNumber) out of \(MAX_PROBLEMS)";
+        outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
         outOfLabel.hidden = false;
         
         //Get the numbers to add together
