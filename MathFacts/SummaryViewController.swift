@@ -25,9 +25,10 @@ class SummaryViewController: UIViewController {
         
         answerSummaryLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(lastProblemNumberAnswered - numberOfProblemsAnsweredCorrectly) wrong, out of \(lastProblemNumberAnswered)";
         
-        var percent = numberOfProblemsAnsweredCorrectly % lastProblemNumberAnswered;
+//        var percent = lastProblemNumberAnswered % numberOfProblemsAnsweredCorrectly;
+        var percent: Double = Double(numberOfProblemsAnsweredCorrectly) / Double(lastProblemNumberAnswered);
         percent = percent * 100;
-        percentCorrectLabel.text = "%\((numberOfProblemsAnsweredCorrectly / lastProblemNumberAnswered) * 100) correct";
+        percentCorrectLabel.text = "\(Int(percent))% correct";
     }
     
     
