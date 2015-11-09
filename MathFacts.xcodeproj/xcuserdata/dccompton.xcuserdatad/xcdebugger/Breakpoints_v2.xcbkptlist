@@ -57,22 +57,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MathFacts/AdditionViewController.swift"
-            timestampString = "468786828.874742"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MathFacts/SummaryViewController.swift"
             timestampString = "468718863.572323"
             startingColumnNumber = "9223372036854775807"
@@ -138,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/AdditionViewController.swift"
-            timestampString = "468787229.805975"
+            timestampString = "468788208.455844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "runAdditionQuestion()"
             landmarkType = "5">
          </BreakpointContent>

@@ -151,7 +151,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zwO-8v-WyT">
                                         <rect key="frame" x="166" y="171" width="228" height="279"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-Q0-NkZ">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-Q0-NkZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="228" height="48"/>
                                                 <color key="backgroundColor" red="0.69803921568627447" green="0.84313725490196079" blue="1" alpha="0.23625886524822695" colorSpace="deviceRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -160,7 +160,7 @@
                                                     <action selector="goPressed" destination="zGN-9X-Qc6" eventType="touchUpInside" id="SZv-KL-04T"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 + 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Be-7G-bgF" userLabel="problemLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5 + 1 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Be-7G-bgF" userLabel="problemLabel">
                                                 <rect key="frame" x="0.0" y="78" width="228" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="228" id="3qT-x5-d5L"/>
@@ -170,10 +170,10 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="BJX-W3-RXF">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="BJX-W3-RXF">
                                                 <rect key="frame" x="0.0" y="151" width="228" height="68"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2w-7l-hv5" userLabel="questionAnswer1">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2w-7l-hv5" userLabel="questionAnswer1">
                                                         <rect key="frame" x="0.0" y="0.0" width="228" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="2ir-ZU-3Uh"/>
@@ -203,7 +203,7 @@
                                                             <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xg5-CD-yGX"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lae-3z-KkU" userLabel="questionAnswer2" colorLabel="IBBuiltInLabel-Gray">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lae-3z-KkU" userLabel="questionAnswer2" colorLabel="IBBuiltInLabel-Gray">
                                                         <rect key="frame" x="0.0" y="23" width="228" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="9Aw-kQ-GtB"/>
@@ -233,7 +233,7 @@
                                                             <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="awV-TO-vlu"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggX-t5-uH6" userLabel="questionAnswer3">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggX-t5-uH6" userLabel="questionAnswer3">
                                                         <rect key="frame" x="0.0" y="45" width="228" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="228" id="7XC-Oa-omr"/>
@@ -261,7 +261,7 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-ca-7cn">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-ca-7cn">
                                                 <rect key="frame" x="0.0" y="249" width="228" height="30"/>
                                                 <state key="normal" title="Next &gt;&gt;"/>
                                                 <connections>

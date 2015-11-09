@@ -28,6 +28,16 @@ class AdditionViewController: UIViewController {
         problemAnswer = 0;
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "answerSummary" {
+            let svc = segue.destinationViewController as! SummaryViewController;
+            
+            svc.numberOfProblemsAnsweredCorrectly = numberOfProblemsAnsweredCorrectly;
+            svc.lastProblemNumberAnswered = currentProblemNumber;
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,16 +60,6 @@ class AdditionViewController: UIViewController {
     var problemAnswer: Int = 0;
     var currentProblemNumber: Int = 0;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "answerSummary" {
-            let svc = segue.destinationViewController as! SummaryViewController;
-            
-            svc.numberOfProblemsAnsweredCorrectly = numberOfProblemsAnsweredCorrectly;
-            svc.lastProblemNumberAnswered = currentProblemNumber;
-            
-        }
-    }
     
     @IBAction func finishedPress(sender: AnyObject) {
         
@@ -200,19 +200,32 @@ class AdditionViewController: UIViewController {
     func displayCorrectProblemAnswer() {
         
         if questionAnswer1.tag == problemAnswer {
-            questionAnswer1.backgroundColor = UIColor.greenColor();
-            questionAnswer2.backgroundColor = UIColor.redColor();
-            questionAnswer3.backgroundColor = UIColor.redColor();
+            questionAnswer1.backgroundColor = UIColor.customGreenColor();
+            questionAnswer2.backgroundColor = UIColor.customRedBackground();
+            questionAnswer3.backgroundColor = UIColor.customRedBackground();
         }
         else if questionAnswer2.tag == problemAnswer {
-            questionAnswer1.backgroundColor = UIColor.redColor();
-            questionAnswer2.backgroundColor = UIColor.greenColor();
-            questionAnswer3.backgroundColor = UIColor.redColor();
+            questionAnswer1.backgroundColor = UIColor.customRedBackground();
+            questionAnswer2.backgroundColor = UIColor.customGreenColor();
+            questionAnswer3.backgroundColor = UIColor.customRedBackground();
         }
         else if questionAnswer3.tag == problemAnswer {
-            questionAnswer1.backgroundColor = UIColor.redColor();
-            questionAnswer2.backgroundColor = UIColor.redColor();
-            questionAnswer3.backgroundColor = UIColor.greenColor();
+            questionAnswer1.backgroundColor = UIColor.customRedBackground();
+            questionAnswer2.backgroundColor = UIColor.customRedBackground();
+            questionAnswer3.backgroundColor = UIColor.customGreenColor();
         }
+    }
+}
+
+extension UIColor
+{
+    class func customRedBackground() -> UIColor {
+        
+        return UIColor(red:1.0, green:0.5, blue:0.6, alpha: 0.2);
+    }
+    
+    class func customGreenColor() -> UIColor {
+        
+        return UIColor(red:0.5, green:1.0, blue:0.5, alpha: 0.2);
     }
 }
