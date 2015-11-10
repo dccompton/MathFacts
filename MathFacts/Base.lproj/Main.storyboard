@@ -28,33 +28,29 @@
                                             <constraint firstAttribute="width" constant="325" id="cLz-4Z-zIc"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="760" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vUE-3a-WPJ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="760" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vUE-3a-WPJ">
                                         <rect key="frame" x="193" y="150" width="175" height="430"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJm-gx-00c" userLabel="additionButton">
-                                                <rect key="frame" x="50" y="0.0" width="75" height="143"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJm-gx-00c" userLabel="additionButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="143"/>
+                                                <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="d4i-jD-eUm"/>
-                                                    <constraint firstAttribute="height" constant="30" id="ohG-h7-ln1"/>
+                                                    <constraint firstAttribute="height" constant="15" id="Q5T-Bw-nXZ"/>
+                                                    <constraint firstAttribute="width" constant="175" id="dTn-tp-PQ7"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Addition">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="d4i-jD-eUm"/>
-                                                        <exclude reference="ohG-h7-ln1"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
-                                                    <segue destination="zGN-9X-Qc6" kind="show" id="Ji8-Et-r74"/>
+                                                    <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="Ji8-Et-r74"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTN-Od-Se0">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTN-Od-Se0">
                                                 <rect key="frame" x="0.0" y="143" width="175" height="144"/>
+                                                <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="C1b-Cz-UfZ"/>
+                                                    <constraint firstAttribute="height" constant="15" id="C1b-Cz-UfZ"/>
                                                     <constraint firstAttribute="width" constant="175" id="JLw-rs-m2P"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -65,10 +61,11 @@
                                                     <action selector="typeOfPlayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdM-az-Zq3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-GT-nbn">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-GT-nbn">
                                                 <rect key="frame" x="0.0" y="287" width="175" height="143"/>
+                                                <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Ihk-O0-bo5"/>
+                                                    <constraint firstAttribute="height" constant="15" id="Ihk-O0-bo5"/>
                                                     <constraint firstAttribute="width" constant="175" id="e4y-Lh-eGy"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -176,28 +173,12 @@
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2w-7l-hv5" userLabel="questionAnswer1">
                                                         <rect key="frame" x="0.0" y="0.0" width="228" height="23"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="2ir-ZU-3Uh"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="6hK-kC-FG4"/>
                                                             <constraint firstAttribute="width" constant="228" id="eIN-hV-cEN"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="228" id="ndh-I4-VA0"/>
-                                                            <constraint firstAttribute="width" constant="70" id="qz0-rg-Cbn"/>
-                                                            <constraint firstAttribute="width" constant="228" id="rhj-vk-C79"/>
-                                                            <constraint firstAttribute="height" constant="30" id="sge-fC-bXD"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                         <state key="normal" title="5">
                                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="2ir-ZU-3Uh"/>
-                                                                <exclude reference="6hK-kC-FG4"/>
-                                                                <exclude reference="ndh-I4-VA0"/>
-                                                                <exclude reference="qz0-rg-Cbn"/>
-                                                                <exclude reference="rhj-vk-C79"/>
-                                                                <exclude reference="sge-fC-bXD"/>
-                                                            </mask>
-                                                        </variation>
                                                         <connections>
                                                             <action selector="answerPressed:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="FSI-cd-wQ9"/>
                                                             <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xg5-CD-yGX"/>
@@ -263,7 +244,9 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-ca-7cn">
                                                 <rect key="frame" x="0.0" y="249" width="228" height="30"/>
-                                                <state key="normal" title="Next &gt;&gt;"/>
+                                                <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Next"/>
                                                 <connections>
                                                     <action selector="nextButtonPressed" destination="zGN-9X-Qc6" eventType="touchUpInside" id="Lwk-G6-i7A"/>
                                                 </connections>
@@ -278,7 +261,7 @@
                                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <state key="normal" title="Main Menu">
-                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="show" id="qc0-jQ-KJB"/>
@@ -288,7 +271,7 @@
                                                 <rect key="frame" x="95" y="0.0" width="58" height="30"/>
                                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <state key="normal" title="Finished">
-                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="finishedPress:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="GTn-te-ERt"/>

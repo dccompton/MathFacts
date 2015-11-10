@@ -20,6 +20,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "questionGame" {
+            let svc = segue.destinationViewController as! AdditionViewController;
+            
+            svc.additionQuestions = true;
+            
+        }
+    }
+    
     //Costants
     let MAX_NUMBER_RANGE: UInt32 = 10;
     let MAX_PROBLEMS: Int = 100;
@@ -29,70 +38,30 @@ class ViewController: UIViewController {
     var currentProblemNumber: Int = 1;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
+    var 
+    
     //IBOutlets
-//    @IBOutlet weak var imageBackground: UIImageView!;
-//    @IBOutlet weak var outOfLabel: UILabel!;
-//    @IBOutlet weak var answerSumLabel: UILabel!;
-//    @IBOutlet weak var playAgainButton: UIButton!;
     @IBOutlet weak var imageLogo: UIImageView!;
-    
-//    @IBOutlet weak var questionLabel: UILabel!;
-//    @IBOutlet weak var questionAnswer1: UIButton!;
-//    @IBOutlet weak var questionAnswer2: UIButton!;
-//    @IBOutlet weak var questionAnswer3: UIButton!;
-    
     @IBOutlet weak var additionButton: UIButton!;
     @IBOutlet weak var subtractionButton: UIButton!;
     @IBOutlet weak var multiplicationButton: UIButton!
     
     
-//    @IBOutlet weak var nextButton: UIButton!;
-//    @IBOutlet weak var doneButton: UIButton!;
-    
-    
-//    @IBAction func playAgainButtonPressed() {
-//
-//        answerSumLabel.hidden = true;
-//        playAgainButton.hidden = true;
-//        
-//        additionButton.hidden = false;
-//        subtractionButton.hidden = false;
-//        
-//        //Reset the counters
-//        problemAnswer = 0;
-//        currentProblemNumber = 1;
-//        numberOfProblemsAnsweredCorrectly = 0;
-//        
-//    }
-    
-//    @IBAction func nextButtonPressed() {
-//        
-//        clearOutBackgroundColors();
-//        runAdditionQuestion();
-//        
-//        nextButton.hidden = true;
-//    }
-    
-    
-//    @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
-//        
-//        additionButton.hidden = true;
-//        subtractionButton.hidden = true;
-////        doneButton.hidden = false;
-//        
-//        let buttonPressed = sender as! UIButton;
-//        
-//        if buttonPressed.tag == 1 {
-//            runAdditionQuestion();
-//        }
-//        else if buttonPressed.tag == 2 {
-//            computeSubtractionFact();
-//        }
-//        else if buttonPressed.tag == 3 {
-//            
-//        }
-//        
-//    }
+    @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
+        
+        let buttonPressed = sender as! UIButton;
+        
+        if buttonPressed.tag == 1 {
+            runAdditionQuestion();
+        }
+        else if buttonPressed.tag == 2 {
+            computeSubtractionFact();
+        }
+        else if buttonPressed.tag == 3 {
+            
+        }
+        
+    }
     
     @IBAction func answerPressed(sender: AnyObject) {
         

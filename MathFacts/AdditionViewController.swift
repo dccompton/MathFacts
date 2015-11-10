@@ -61,6 +61,9 @@ class AdditionViewController: UIViewController {
     var currentProblemNumber: Int = 0;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
+    var additionQuestions: Bool = false;
+    var substractionQuestions: Bool = false;
+    
     @IBAction func finishedPress(sender: AnyObject) {
         
         if nextButton.hidden == true {
@@ -100,7 +103,6 @@ class AdditionViewController: UIViewController {
         
         nextButton.hidden = true;
     }
-
     
     func runAdditionQuestion() {
         
