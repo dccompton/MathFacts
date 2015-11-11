@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     var currentProblemNumber: Int = 1;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     
-    var 
+    //var
     
     //IBOutlets
     @IBOutlet weak var imageLogo: UIImageView!;
