@@ -52,10 +52,6 @@ class AdditionViewController: UIViewController {
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-    //Costants
-    let MAX_NUMBER_RANGE: UInt32 = 10;
-    let MAX_PROBLEMS: Int = 2;
-    
     //Variables
     var problemAnswer: Int = 0;
     var currentProblemNumber: Int = 0;

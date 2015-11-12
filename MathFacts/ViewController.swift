@@ -8,13 +8,6 @@
 
 import UIKit
 
-enum MathProblem {
-    
-    case Addition
-    case Subtraction
-    case Multiplication
-}
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
