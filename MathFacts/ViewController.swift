@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum MathProblem {
+    
+    case Addition
+    case Subtraction
+    case Multiplication
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -28,6 +35,8 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    
     
     //Costants
     let MAX_NUMBER_RANGE: UInt32 = 10;
@@ -81,50 +90,6 @@ class ViewController: UIViewController {
         }
     }
     
-//    @IBAction func doneButtonPressed() {
-//        
-//        answerSumLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(currentProblemNumber - numberOfProblemsAnsweredCorrectly) wrong, out of \(currentProblemNumber)";
-//        
-//        outOfLabel.hidden = true;
-//        
-//        answerSumLabel.hidden = false;
-//        playAgainButton.hidden = false;
-//        
-//        questionLabel.hidden = true;
-//        questionAnswer1.hidden = true;
-//        questionAnswer2.hidden = true;
-//        questionAnswer3.hidden = true;
-//        
-//        outOfLabel.hidden = true;
-//        
-//        clearOutBackgroundColors();
-//    }
-    
-//    func clearOutBackgroundColors() {
-//        
-//        questionAnswer1.backgroundColor = nil;
-//        questionAnswer2.backgroundColor = nil;
-//        questionAnswer3.backgroundColor = nil;
-//    }
-    
-//    func displayCorrectProblemAnswer() {
-//        
-//        if questionAnswer1.tag == problemAnswer {
-//            questionAnswer1.backgroundColor = UIColor.greenColor();
-//            questionAnswer2.backgroundColor = UIColor.redColor();
-//            questionAnswer3.backgroundColor = UIColor.redColor();
-//        }
-//        else if questionAnswer2.tag == problemAnswer {
-//            questionAnswer1.backgroundColor = UIColor.redColor();
-//            questionAnswer2.backgroundColor = UIColor.greenColor();
-//            questionAnswer3.backgroundColor = UIColor.redColor();
-//        }
-//        else if questionAnswer3.tag == problemAnswer {
-//            questionAnswer1.backgroundColor = UIColor.redColor();
-//            questionAnswer2.backgroundColor = UIColor.redColor();
-//            questionAnswer3.backgroundColor = UIColor.greenColor();
-//        }
-//    }
     
     func runAdditionQuestion() {
         

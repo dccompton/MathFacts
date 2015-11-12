@@ -63,6 +63,7 @@ class AdditionViewController: UIViewController {
     
     var additionQuestions: Bool = false;
     var substractionQuestions: Bool = false;
+    var multiplicationQuestions: Bool = false;
     
     @IBAction func finishedPress(sender: AnyObject) {
         
