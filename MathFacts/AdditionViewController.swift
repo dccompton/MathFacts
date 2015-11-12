@@ -109,20 +109,6 @@ class AdditionViewController: UIViewController {
         nextButton.hidden = true;
     }
     
-//    func runTest() {
-//
-//        switch typeOfProblem {
-//            
-//        case .Addition:
-//            runAdditionQuestion();
-//        case .Subtraction:
-//            runSubtractionQuestion();
-//        case .Multiplication:
-//            runMultiplicationQuestion();
-//        }
-//        
-//    }
-    
     func runMathQuestions() {
         
         if currentProblemNumber < Int(MAX_PROBLEMS) {
@@ -162,76 +148,6 @@ class AdditionViewController: UIViewController {
         else {
             performSegueWithIdentifier("answerSummary", sender: nil)
         }
-    }
-    
-    func runAdditionQuestion() {
-        
-        
-        if currentProblemNumber < Int(MAX_PROBLEMS) {
-            
-            clearOutBackgroundColors();
-            
-            outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
-            outOfLabel.hidden = false;
-            
-            //Get the numbers to add together
-            let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-            let secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-            
-            //Get the correct answer and the wrong answers
-            problemAnswer = firstNumber + secondNumber;
-            let firstWrongAnswer  = getWrongAnswer();
-            let secondWrongAnswer = getWrongAnswer();
-            
-            problemQuestionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
-            
-            buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
-        }
-        else {
-            performSegueWithIdentifier("answerSummary", sender: nil)
-        }
-    }
-    
-    func runSubtractionQuestion() {
-        
-        clearOutBackgroundColors();
-        
-        outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
-        outOfLabel.hidden = false;
-        
-        //Get the numbers to subtract
-        let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        let secondNumber: Int = Int(arc4random_uniform(UInt32(firstNumber))) + 1;
-        
-        //Get the correct answer and the wrong answers
-        problemAnswer = firstNumber - secondNumber;
-        let firstWrongAnswer  = getWrongAnswer();
-        let secondWrongAnswer = getWrongAnswer();
-        
-        problemQuestionLabel.text = "\(firstNumber) - \(secondNumber) = ?";
-        
-        buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
-    }
-    
-    func runMultiplicationQuestion() {
-        
-        clearOutBackgroundColors();
-        
-        outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
-        outOfLabel.hidden = false;
-        
-        //Get the numbers to subtract
-        let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        let secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        
-        //Get the correct answer and the wrong answers
-        problemAnswer = firstNumber * secondNumber;
-        let firstWrongAnswer  = getWrongAnswer();
-        let secondWrongAnswer = getWrongAnswer();
-        
-        problemQuestionLabel.text = "\(firstNumber) * \(secondNumber) = ?";
-        
-        buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
     }
     
     func buildAndShowRightAndWrongAnswers(firstWrongAnswer: Int, secondWrongAnswer: Int, problemAnswer: Int)
