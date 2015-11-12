@@ -48,19 +48,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    //Costants
-    let MAX_NUMBER_RANGE: UInt32 = 10;
-    let MAX_PROBLEMS: Int = 100;
-    
-    //Variables
-    var problemAnswer: Int = 0;
-    var currentProblemNumber: Int = 1;
-    var numberOfProblemsAnsweredCorrectly: Int = 0;
-    
-    //var
-    
     //IBOutlets
     @IBOutlet weak var imageLogo: UIImageView!;
     @IBOutlet weak var additionButton: UIButton!;

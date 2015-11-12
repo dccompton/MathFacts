@@ -95,6 +95,17 @@ class AdditionViewController: UIViewController {
         goButton.hidden = true;
         problemQuestionLabel.hidden = false;
         showAnswerChoices();
+        
+        switch typeOfProblem {
+            
+        case .Addition:
+            runAdditionQuestion();
+        case .Subtraction:
+            runAdditionQuestion();
+        case .Multiplication:
+            runAdditionQuestion();
+        }
+        
         runAdditionQuestion();
     }
     
