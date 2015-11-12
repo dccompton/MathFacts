@@ -82,7 +82,7 @@ class AdditionViewController: UIViewController {
             
             numberOfProblemsAnsweredCorrectly++;
 
-            runTest();
+            runMathQuestions();
             
         } else {
             
@@ -97,30 +97,71 @@ class AdditionViewController: UIViewController {
         problemQuestionLabel.hidden = false;
         showAnswerChoices();
         
-        runTest();
+        runMathQuestions();
     }
     
     @IBAction func nextButtonPressed() {
         
         clearOutBackgroundColors();
 
-        runTest();
+        runMathQuestions();
         
         nextButton.hidden = true;
     }
     
-    func runTest() {
-
-        switch typeOfProblem {
-            
-        case .Addition:
-            runAdditionQuestion();
-        case .Subtraction:
-            runSubtractionQuestion();
-        case .Multiplication:
-            runAdditionQuestion();
-        }
+//    func runTest() {
+//
+//        switch typeOfProblem {
+//            
+//        case .Addition:
+//            runAdditionQuestion();
+//        case .Subtraction:
+//            runSubtractionQuestion();
+//        case .Multiplication:
+//            runMultiplicationQuestion();
+//        }
+//        
+//    }
+    
+    func runMathQuestions() {
         
+        if currentProblemNumber < Int(MAX_PROBLEMS) {
+            
+            clearOutBackgroundColors();
+            
+            outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
+            outOfLabel.hidden = false;
+            
+            //Get the numbers to add together
+            let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            var secondNumber: Int = 0;
+            
+            switch typeOfProblem {
+                
+            case .Addition:
+                secondNumber = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+                problemAnswer = firstNumber + secondNumber;
+                problemQuestionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
+            case .Subtraction:
+                secondNumber = Int(arc4random_uniform(UInt32(firstNumber))) + 1;
+                problemAnswer = firstNumber - secondNumber;
+                problemQuestionLabel.text = "\(firstNumber) - \(secondNumber) = ?";
+            case .Multiplication:
+                secondNumber = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+                problemAnswer = firstNumber * secondNumber;
+                problemQuestionLabel.text = "\(firstNumber) * \(secondNumber) = ?";
+                
+            }
+            
+            //Get the wrong answers
+            let firstWrongAnswer  = getWrongAnswer();
+            let secondWrongAnswer = getWrongAnswer();
+            
+            buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
+        }
+        else {
+            performSegueWithIdentifier("answerSummary", sender: nil)
+        }
     }
     
     func runAdditionQuestion() {
@@ -168,6 +209,27 @@ class AdditionViewController: UIViewController {
         let secondWrongAnswer = getWrongAnswer();
         
         problemQuestionLabel.text = "\(firstNumber) - \(secondNumber) = ?";
+        
+        buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
+    }
+    
+    func runMultiplicationQuestion() {
+        
+        clearOutBackgroundColors();
+        
+        outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
+        outOfLabel.hidden = false;
+        
+        //Get the numbers to subtract
+        let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        let secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        
+        //Get the correct answer and the wrong answers
+        problemAnswer = firstNumber * secondNumber;
+        let firstWrongAnswer  = getWrongAnswer();
+        let secondWrongAnswer = getWrongAnswer();
+        
+        problemQuestionLabel.text = "\(firstNumber) * \(secondNumber) = ?";
         
         buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
     }
