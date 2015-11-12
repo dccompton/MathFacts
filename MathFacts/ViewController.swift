@@ -33,6 +33,18 @@ class ViewController: UIViewController {
             
             svc.additionQuestions = true;
             
+            let buttonPressed = sender as! UIButton;
+            
+            if buttonPressed.tag == 1 {
+                print("Addition");
+            }
+            else if buttonPressed.tag == 2 {
+                print("Subtraction");
+            }
+            else if buttonPressed.tag == 3 {
+                print("Multiplication");
+            }
+            
         }
     }
     
@@ -55,134 +67,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var subtractionButton: UIButton!;
     @IBOutlet weak var multiplicationButton: UIButton!
     
-    
-    @IBAction func typeOfPlayButtonPressed(sender: AnyObject) {
-        
-        let buttonPressed = sender as! UIButton;
-        
-        if buttonPressed.tag == 1 {
-            runAdditionQuestion();
-        }
-        else if buttonPressed.tag == 2 {
-            computeSubtractionFact();
-        }
-        else if buttonPressed.tag == 3 {
-            
-        }
-        
-    }
-    
-    @IBAction func answerPressed(sender: AnyObject) {
-        
-        let answerButtonPressed = sender as! UIButton;
-        
-        currentProblemNumber += 1;
-        
-        if answerButtonPressed.tag == problemAnswer {
-            
-            numberOfProblemsAnsweredCorrectly += 1;
-            runAdditionQuestion();
-            
-        } else {
-            
-            //nextButton.hidden = false;
-//            displayCorrectProblemAnswer();
-        }
-    }
-    
-    
-    func runAdditionQuestion() {
-        
-//        clearOutBackgroundColors();
-        
-//        outOfLabel.text = "\(currentProblemNumber) out of \(MAX_PROBLEMS)";
-//        outOfLabel.hidden = false;
-        
-        //Get the numbers to add together
-        let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        let secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        
-        //Get the correct answer and the wrong answers
-        problemAnswer = firstNumber + secondNumber;
-        let firstWrongAnswer  = getWrongAnswer();
-        let secondWrongAnswer = getWrongAnswer();
-        
-//        questionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
-        
-        //Build answer selections
-        //These must be randomized so that the correct answer is not always in the same position
-        let answerOrder = Int(arc4random_uniform(3)) + 1;
-        switch answerOrder {
-        case 1:
-            
-//            questionAnswer1.setTitle(String(problemAnswer), forState: .Normal);
-//            questionAnswer2.setTitle(String(firstWrongAnswer), forState: .Normal);
-//            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
-//            
-//            questionAnswer1.tag = Int(problemAnswer);
-//            questionAnswer2.tag = firstWrongAnswer;
-//            questionAnswer3.tag = secondWrongAnswer;
-            
-            showAnswerChoices();
-            
-        case 2:
-            
-//            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
-//            questionAnswer2.setTitle(String(problemAnswer), forState: .Normal);
-//            questionAnswer3.setTitle(String(secondWrongAnswer), forState: .Normal);
-//            
-//            questionAnswer1.tag = firstWrongAnswer;
-//            questionAnswer2.tag = Int(problemAnswer);
-//            questionAnswer3.tag = secondWrongAnswer;
-            
-            showAnswerChoices();
-            
-        case 3:
-            
-//            questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
-//            questionAnswer2.setTitle(String(secondWrongAnswer), forState: .Normal);
-//            questionAnswer3.setTitle(String(problemAnswer), forState: .Normal);
-//            
-//            questionAnswer1.tag = firstWrongAnswer;
-//            questionAnswer2.tag = secondWrongAnswer;
-//            questionAnswer3.tag = Int(problemAnswer);
-            
-            showAnswerChoices();
-            
-        default:
-//            questionLabel.text = "Error: No Calculations Found";
-            
-            showAnswerChoices();
-        }
-
-    }
-    
-    func showAnswerChoices() {
-        
-//        questionLabel.hidden = false;
-//        questionAnswer1.hidden = false;
-//        questionAnswer2.hidden = false;
-//        questionAnswer3.hidden = false;
-        
-    }
-    
-    func getWrongAnswer() -> Int {
-        
-        var wrongAnswer = 0;
-        
-        repeat {
-            
-            wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-            
-        } while wrongAnswer == problemAnswer;
-        
-        return wrongAnswer;
-        
-    }
-    
-    func computeSubtractionFact() {
-        
-    }
 
 }
 

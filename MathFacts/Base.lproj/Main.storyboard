@@ -60,7 +60,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="typeOfPlayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdM-az-Zq3"/>
+                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="CEm-7A-ugg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-GT-nbn">
@@ -75,7 +75,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="typeOfPlayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ko6-eo-Dvx"/>
+                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="I18-3x-XEw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -219,7 +219,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="FSI-cd-wQ9"/>
-                                                    <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xg5-CD-yGX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lae-3z-KkU" userLabel="questionAnswer2" colorLabel="IBBuiltInLabel-Gray">
@@ -249,7 +248,6 @@
                                                 </variation>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="CVR-iu-jlp"/>
-                                                    <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="awV-TO-vlu"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggX-t5-uH6" userLabel="questionAnswer3">
@@ -275,7 +273,6 @@
                                                 </variation>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="J04-yE-UJW"/>
-                                                    <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PCz-XO-pMO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -469,5 +466,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qc0-jQ-KJB"/>
+        <segue reference="I18-3x-XEw"/>
     </inferredMetricsTieBreakers>
 </document>
