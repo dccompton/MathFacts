@@ -23,12 +23,20 @@ class SummaryViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        answerSummaryLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(lastProblemNumberAnswered - numberOfProblemsAnsweredCorrectly) wrong, out of \(lastProblemNumberAnswered)";
-        
-//        var percent = lastProblemNumberAnswered % numberOfProblemsAnsweredCorrectly;
-        var percent: Double = Double(numberOfProblemsAnsweredCorrectly) / Double(lastProblemNumberAnswered);
-        percent = percent * 100;
-        percentCorrectLabel.text = "\(Int(percent))% correct";
+        if lastProblemNumberAnswered > 0 {
+            
+            answerSummaryLabel.text = "\(numberOfProblemsAnsweredCorrectly) right, \(lastProblemNumberAnswered - numberOfProblemsAnsweredCorrectly) wrong, out of \(lastProblemNumberAnswered)";
+            
+            var percent: Double = Double(numberOfProblemsAnsweredCorrectly) / Double(lastProblemNumberAnswered);
+            percent = percent * 100;
+            percentCorrectLabel.text = "\(Int(percent))% correct";
+        }
+        else {
+            
+            answerSummaryLabel.text = "There no problems answered";
+            percentCorrectLabel.hidden = true;
+        }
+    
     }
     
     

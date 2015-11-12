@@ -54,7 +54,7 @@ class AdditionViewController: UIViewController {
     
     //Costants
     let MAX_NUMBER_RANGE: UInt32 = 10;
-    let MAX_PROBLEMS: Int = 100;
+    let MAX_PROBLEMS: Int = 2;
     
     //Variables
     var problemAnswer: Int = 0;
@@ -125,23 +125,30 @@ class AdditionViewController: UIViewController {
     
     func runAdditionQuestion() {
         
-        clearOutBackgroundColors();
         
-        outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
-        outOfLabel.hidden = false;
-        
-        //Get the numbers to add together
-        let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        let secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-        
-        //Get the correct answer and the wrong answers
-        problemAnswer = firstNumber + secondNumber;
-        let firstWrongAnswer  = getWrongAnswer();
-        let secondWrongAnswer = getWrongAnswer();
-        
-        problemQuestionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
-        
-        buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
+        if currentProblemNumber < Int(MAX_PROBLEMS) {
+            
+            clearOutBackgroundColors();
+            
+            outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
+            outOfLabel.hidden = false;
+            
+            //Get the numbers to add together
+            let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            let secondNumber: Int = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+            
+            //Get the correct answer and the wrong answers
+            problemAnswer = firstNumber + secondNumber;
+            let firstWrongAnswer  = getWrongAnswer();
+            let secondWrongAnswer = getWrongAnswer();
+            
+            problemQuestionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
+            
+            buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
+        }
+        else {
+            performSegueWithIdentifier("answerSummary", sender: nil)
+        }
     }
     
     func runSubtractionQuestion() {
