@@ -169,7 +169,7 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-gQ-Qpr">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-gQ-Qpr">
                                 <rect key="frame" x="186" y="128" width="228" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-Q0-NkZ">
@@ -188,6 +188,16 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="bRc-Q0-NkZ" firstAttribute="centerY" secondItem="wNY-gQ-Qpr" secondAttribute="centerY" id="DU0-d6-CdD"/>
+                                    <constraint firstItem="bRc-Q0-NkZ" firstAttribute="centerX" secondItem="wNY-gQ-Qpr" secondAttribute="centerX" id="EjE-Bb-KXH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DU0-d6-CdD"/>
+                                        <exclude reference="EjE-Bb-KXH"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="er9-Ds-Fua">
                                 <rect key="frame" x="186" y="176" width="228" height="247"/>
@@ -338,6 +348,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wNY-gQ-Qpr" firstAttribute="top" secondItem="UTu-W2-59d" secondAttribute="bottom" constant="20" id="01s-r3-5nA"/>
+                            <constraint firstItem="wNY-gQ-Qpr" firstAttribute="top" secondItem="UTu-W2-59d" secondAttribute="bottom" constant="180" id="28d-Ca-82a"/>
                             <constraint firstItem="UTu-W2-59d" firstAttribute="top" secondItem="e5V-wD-JeX" secondAttribute="bottom" id="6pp-QJ-BtV"/>
                             <constraint firstItem="UTu-W2-59d" firstAttribute="top" secondItem="e5V-wD-JeX" secondAttribute="bottom" constant="20" id="Aed-93-tFt"/>
                             <constraint firstItem="VJA-ca-7cn" firstAttribute="centerX" secondItem="Ynk-Wz-51t" secondAttribute="centerX" id="DcM-Ya-grb"/>
@@ -350,19 +361,27 @@
                             <constraint firstItem="UTu-W2-59d" firstAttribute="centerX" secondItem="Ynk-Wz-51t" secondAttribute="centerX" id="dGm-LT-LZ2"/>
                             <constraint firstItem="UTu-W2-59d" firstAttribute="top" secondItem="e5V-wD-JeX" secondAttribute="bottom" id="erR-6E-LGp"/>
                             <constraint firstItem="er9-Ds-Fua" firstAttribute="centerX" secondItem="Ynk-Wz-51t" secondAttribute="centerX" id="f4S-le-y6j"/>
+                            <constraint firstItem="wNY-gQ-Qpr" firstAttribute="centerY" secondItem="Ynk-Wz-51t" secondAttribute="centerY" id="fts-cX-3r6"/>
                             <constraint firstItem="UTu-W2-59d" firstAttribute="top" secondItem="e5V-wD-JeX" secondAttribute="bottom" id="hbB-61-zdl"/>
                             <constraint firstItem="wNY-gQ-Qpr" firstAttribute="centerX" secondItem="Ynk-Wz-51t" secondAttribute="centerX" id="iWV-DX-2k3"/>
+                            <constraint firstItem="UTu-W2-59d" firstAttribute="top" secondItem="e5V-wD-JeX" secondAttribute="bottom" id="nAp-n5-piw"/>
                             <constraint firstItem="llV-6w-d0O" firstAttribute="centerX" secondItem="Ynk-Wz-51t" secondAttribute="centerX" id="oEg-DY-lEz"/>
+                            <constraint firstItem="wNY-gQ-Qpr" firstAttribute="centerX" secondItem="Ynk-Wz-51t" secondAttribute="centerX" id="ode-rp-2Ci"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Aed-93-tFt"/>
                                 <exclude reference="XzR-uD-obp"/>
                                 <exclude reference="01s-r3-5nA"/>
+                                <exclude reference="JV0-VF-aFv"/>
+                                <exclude reference="fts-cX-3r6"/>
+                                <exclude reference="iWV-DX-2k3"/>
+                                <exclude reference="aJs-Kl-eya"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="finishedButton" destination="my6-rl-pIw" id="awb-7Y-Llv"/>
                         <outlet property="goButton" destination="bRc-Q0-NkZ" id="4my-wh-mOt"/>
                         <outlet property="nextButton" destination="VJA-ca-7cn" id="gDb-Tj-3J8"/>
                         <outlet property="outOfLabel" destination="bth-gH-X4d" id="KkE-vh-Dqa"/>
@@ -370,6 +389,7 @@
                         <outlet property="questionAnswer1" destination="p2w-7l-hv5" id="bs3-bM-fuB"/>
                         <outlet property="questionAnswer2" destination="lae-3z-KkU" id="me3-Ia-lan"/>
                         <outlet property="questionAnswer3" destination="ggX-t5-uH6" id="xKh-aR-3WX"/>
+                        <outlet property="startOverButton" destination="c2B-Xm-qdW" id="Lgm-rE-1RX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdO-OZ-cXb" userLabel="First Responder" sceneMemberID="firstResponder"/>

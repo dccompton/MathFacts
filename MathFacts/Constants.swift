@@ -17,4 +17,4 @@ enum MathProblem {
 
 //Costants
 let MAX_NUMBER_RANGE: UInt32 = 10;
-let MAX_PROBLEMS: Int = 2;
+let MAX_PROBLEMS: Int = 100;

@@ -26,6 +26,9 @@ class MathQuestionsViewController: UIViewController {
         currentProblemNumber = 0;
         numberOfProblemsAnsweredCorrectly = 0;
         problemAnswer = 0;
+        
+        startOverButton.hidden = true;
+        finishedButton.hidden = true;
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -51,6 +54,8 @@ class MathQuestionsViewController: UIViewController {
     @IBOutlet weak var outOfLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var startOverButton: UIButton!
+    @IBOutlet weak var finishedButton: UIButton!
     
     //Variables
     var problemAnswer: Int = 0;
@@ -91,6 +96,10 @@ class MathQuestionsViewController: UIViewController {
         outOfLabel.hidden = false;
         goButton.hidden = true;
         problemQuestionLabel.hidden = false;
+        
+        startOverButton.hidden = false;
+        finishedButton.hidden = false;
+        
         showAnswerChoices();
         
         runMathQuestions();
