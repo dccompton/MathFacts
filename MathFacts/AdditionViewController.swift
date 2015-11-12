@@ -81,7 +81,8 @@ class AdditionViewController: UIViewController {
         if answerButtonPressed.tag == problemAnswer {
             
             numberOfProblemsAnsweredCorrectly++;
-            runAdditionQuestion();
+
+            runTest();
             
         } else {
             
@@ -96,25 +97,30 @@ class AdditionViewController: UIViewController {
         problemQuestionLabel.hidden = false;
         showAnswerChoices();
         
-        switch typeOfProblem {
-            
-        case .Addition:
-            runAdditionQuestion();
-        case .Subtraction:
-            runAdditionQuestion();
-        case .Multiplication:
-            runAdditionQuestion();
-        }
-        
-        runAdditionQuestion();
+        runTest();
     }
     
     @IBAction func nextButtonPressed() {
         
         clearOutBackgroundColors();
-        runAdditionQuestion();
+
+        runTest();
         
         nextButton.hidden = true;
+    }
+    
+    func runTest() {
+
+        switch typeOfProblem {
+            
+        case .Addition:
+            runAdditionQuestion();
+        case .Subtraction:
+            runSubtractionQuestion();
+        case .Multiplication:
+            runAdditionQuestion();
+        }
+        
     }
     
     func runAdditionQuestion() {
@@ -135,6 +141,32 @@ class AdditionViewController: UIViewController {
         
         problemQuestionLabel.text = "\(firstNumber) + \(secondNumber) = ?";
         
+        buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
+    }
+    
+    func runSubtractionQuestion() {
+        
+        clearOutBackgroundColors();
+        
+        outOfLabel.text = "\(++currentProblemNumber) out of \(MAX_PROBLEMS)";
+        outOfLabel.hidden = false;
+        
+        //Get the numbers to subtract
+        let firstNumber: Int  = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+        let secondNumber: Int = Int(arc4random_uniform(UInt32(firstNumber))) + 1;
+        
+        //Get the correct answer and the wrong answers
+        problemAnswer = firstNumber - secondNumber;
+        let firstWrongAnswer  = getWrongAnswer();
+        let secondWrongAnswer = getWrongAnswer();
+        
+        problemQuestionLabel.text = "\(firstNumber) - \(secondNumber) = ?";
+        
+        buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
+    }
+    
+    func buildAndShowRightAndWrongAnswers(firstWrongAnswer: Int, secondWrongAnswer: Int, problemAnswer: Int)
+    {
         //Build answer selections
         //These must be randomized so that the correct answer is not always in the same position
         let answerOrder = Int(arc4random_uniform(3)) + 1;
@@ -149,8 +181,6 @@ class AdditionViewController: UIViewController {
             questionAnswer2.tag = firstWrongAnswer;
             questionAnswer3.tag = secondWrongAnswer;
             
-            //showAnswerChoices();
-            
         case 2:
             
             questionAnswer1.setTitle(String(firstWrongAnswer), forState: .Normal);
@@ -160,8 +190,6 @@ class AdditionViewController: UIViewController {
             questionAnswer1.tag = firstWrongAnswer;
             questionAnswer2.tag = Int(problemAnswer);
             questionAnswer3.tag = secondWrongAnswer;
-            
-            //showAnswerChoices();
             
         case 3:
             
@@ -173,14 +201,9 @@ class AdditionViewController: UIViewController {
             questionAnswer2.tag = secondWrongAnswer;
             questionAnswer3.tag = Int(problemAnswer);
             
-            //showAnswerChoices();
-            
         default:
             problemQuestionLabel.text = "Error: No Calculations Found";
-            
-            //showAnswerChoices();
         }
-        
     }
     
     func getWrongAnswer() -> Int {
