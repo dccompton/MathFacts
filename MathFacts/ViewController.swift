@@ -36,13 +36,13 @@ class ViewController: UIViewController {
             let buttonPressed = sender as! UIButton;
             
             if buttonPressed.tag == 1 {
-                print("Addition");
+                svc.typeOfProblem = MathProblem.Addition;
             }
             else if buttonPressed.tag == 2 {
-                print("Subtraction");
+                svc.typeOfProblem = MathProblem.Subtraction;
             }
             else if buttonPressed.tag == 3 {
-                print("Multiplication");
+                svc.typeOfProblem = MathProblem.Multiplication;
             }
             
         }

@@ -60,6 +60,7 @@ class AdditionViewController: UIViewController {
     var problemAnswer: Int = 0;
     var currentProblemNumber: Int = 0;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
+    var typeOfProblem: MathProblem = MathProblem.Addition;
     
     var additionQuestions: Bool = false;
     var substractionQuestions: Bool = false;
