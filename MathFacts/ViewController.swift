@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "questionGame" {
-            let svc = segue.destinationViewController as! AdditionViewController;
+            let svc = segue.destinationViewController as! MathQuestionsViewController;
             
             svc.additionQuestions = true;
             

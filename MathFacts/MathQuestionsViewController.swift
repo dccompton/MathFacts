@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdditionViewController: UIViewController {
+class MathQuestionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

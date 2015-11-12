@@ -40,12 +40,12 @@
                                             <constraint firstAttribute="height" constant="50" id="4uf-xF-IVW"/>
                                             <constraint firstAttribute="width" constant="175" id="dTn-tp-PQ7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Addition">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                         <connections>
-                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="Ji8-Et-r74"/>
+                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="Zfx-DS-qGR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTN-Od-Se0">
@@ -55,12 +55,12 @@
                                             <constraint firstAttribute="width" constant="175" id="JLw-rs-m2P"/>
                                             <constraint firstAttribute="height" constant="50" id="aHd-TU-DXQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Subtraction">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                         <connections>
-                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="CEm-7A-ugg"/>
+                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="7As-MD-OSM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-GT-nbn">
@@ -70,12 +70,12 @@
                                             <constraint firstAttribute="height" constant="50" id="Zet-jg-D7Y"/>
                                             <constraint firstAttribute="width" constant="175" id="e4y-Lh-eGy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Multiplication">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                         <connections>
-                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="I18-3x-XEw"/>
+                                            <segue destination="zGN-9X-Qc6" kind="show" identifier="questionGame" id="scB-9t-kD7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="182" y="304"/>
         </scene>
-        <!--Addition View Controller-->
+        <!--Math Questions View Controller-->
         <scene sceneID="wwa-4s-9wa">
             <objects>
-                <viewController id="zGN-9X-Qc6" customClass="AdditionViewController" customModule="MathFacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zGN-9X-Qc6" customClass="MathQuestionsViewController" customModule="MathFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e5V-wD-JeX"/>
                         <viewControllerLayoutGuide type="bottom" id="CGr-C4-tRB"/>
@@ -170,17 +170,19 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-gQ-Qpr">
-                                <rect key="frame" x="250" y="128" width="100" height="40"/>
+                                <rect key="frame" x="186" y="128" width="228" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-Q0-NkZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="228" height="40"/>
                                         <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="XZx-gE-3hn"/>
+                                            <constraint firstAttribute="width" constant="228" id="XZx-gE-3hn"/>
                                             <constraint firstAttribute="height" constant="40" id="yD9-AL-uGj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <state key="normal" title="Go!"/>
+                                        <state key="normal" title="Go!">
+                                            <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
                                         <connections>
                                             <action selector="goPressed" destination="zGN-9X-Qc6" eventType="touchUpInside" id="SZv-KL-04T"/>
                                         </connections>
@@ -391,10 +393,11 @@
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="1ko-Kk-rLK"/>
+                                    <constraint firstAttribute="height" constant="50" id="lA2-Wm-taB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Main Menu">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Start Over">
+                                    <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7iQ-BT-vd3"/>
@@ -466,6 +469,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qc0-jQ-KJB"/>
-        <segue reference="I18-3x-XEw"/>
+        <segue reference="7As-MD-OSM"/>
     </inferredMetricsTieBreakers>
 </document>
