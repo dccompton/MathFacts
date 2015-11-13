@@ -15,6 +15,13 @@ enum MathProblem {
     case Multiplication
 }
 
+enum HardnessLevel {
+    
+    case Easy
+    case Hard
+}
+
 //Costants
 let MAX_NUMBER_RANGE: UInt32 = 10;
 let MAX_PROBLEMS: Int = 100;
+let NUMBER_VARIANCE = 5;

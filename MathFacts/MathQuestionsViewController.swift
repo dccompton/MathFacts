@@ -29,6 +29,11 @@ class MathQuestionsViewController: UIViewController {
         
         startOverButton.hidden = true;
         finishedButton.hidden = true;
+        
+//        easyButton.hidden = true;
+//        hardButton.hidden = true;
+        goButton.hidden = true;
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -56,16 +61,36 @@ class MathQuestionsViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var startOverButton: UIButton!
     @IBOutlet weak var finishedButton: UIButton!
+    @IBOutlet weak var easyButton: UIButton!
+    @IBOutlet weak var hardButton: UIButton!
     
     //Variables
     var problemAnswer: Int = 0;
     var currentProblemNumber: Int = 0;
     var numberOfProblemsAnsweredCorrectly: Int = 0;
     var typeOfProblem: MathProblem = MathProblem.Addition;
+    var hardnessLevel: HardnessLevel = HardnessLevel.Easy;
     
     var additionQuestions: Bool = false;
     var substractionQuestions: Bool = false;
     var multiplicationQuestions: Bool = false;
+    
+    @IBAction func hardnessLevel(sender: AnyObject) {
+        
+        let hardnessLevelButton = sender as! UIButton;
+        
+        if hardnessLevelButton.tag == 1 {
+            
+            hardnessLevel = HardnessLevel.Easy;
+        }
+        else {
+            hardnessLevel = HardnessLevel.Hard;
+        }
+        
+        hardButton.hidden = true;
+        easyButton.hidden = true;
+        goButton.hidden = false;
+    }
     
     @IBAction func finishedPress(sender: AnyObject) {
         
@@ -200,11 +225,22 @@ class MathQuestionsViewController: UIViewController {
         
         var wrongAnswer = 0;
         
-        repeat {
-            
-            wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-            
-        } while wrongAnswer == problemAnswer;
+        if hardnessLevel == HardnessLevel.Hard {
+
+            repeat {
+                
+                wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+                
+                print("I is here");
+                
+            } while wrongAnswer == problemAnswer || (wrongAnswer < (problemAnswer - NUMBER_VARIANCE) || wrongAnswer > (problemAnswer + NUMBER_VARIANCE))
+        }
+        
+//        repeat {
+//            
+//            wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+//            
+//        } while wrongAnswer == problemAnswer;
         
         return wrongAnswer;
         

@@ -169,11 +169,52 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-gQ-Qpr">
-                                <rect key="frame" x="186" y="128" width="228" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-gQ-Qpr">
+                                <rect key="frame" x="186" y="128" width="228" height="90"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mmd-yH-ef5">
+                                        <rect key="frame" x="2" y="0.0" width="225" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEO-gq-y2I" userLabel="EasyButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="50"/>
+                                                <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="ACN-J7-72F"/>
+                                                    <constraint firstAttribute="width" constant="228" id="cWa-Ja-HwT"/>
+                                                    <constraint firstAttribute="height" constant="50" id="trx-xk-OfU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Easy">
+                                                    <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="cWa-Ja-HwT"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="hardnessLevel:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="uhy-9M-f1i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1N-Oc-CTB" userLabel="HardButton">
+                                                <rect key="frame" x="115" y="0.0" width="110" height="50"/>
+                                                <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Kf9-ma-c90"/>
+                                                    <constraint firstAttribute="width" constant="110" id="jz1-29-pMY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Hard">
+                                                    <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hardnessLevel:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="zSb-qX-Kby"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-Q0-NkZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="228" height="40"/>
+                                        <rect key="frame" x="0.0" y="50" width="228" height="40"/>
                                         <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="228" id="XZx-gE-3hn"/>
@@ -381,8 +422,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="easyButton" destination="yEO-gq-y2I" id="9GG-fm-s3y"/>
                         <outlet property="finishedButton" destination="my6-rl-pIw" id="awb-7Y-Llv"/>
                         <outlet property="goButton" destination="bRc-Q0-NkZ" id="4my-wh-mOt"/>
+                        <outlet property="hardButton" destination="a1N-Oc-CTB" id="CXR-nf-hms"/>
                         <outlet property="nextButton" destination="VJA-ca-7cn" id="gDb-Tj-3J8"/>
                         <outlet property="outOfLabel" destination="bth-gH-X4d" id="KkE-vh-Dqa"/>
                         <outlet property="problemQuestionLabel" destination="2Be-7G-bgF" id="bqp-dv-ACT"/>
