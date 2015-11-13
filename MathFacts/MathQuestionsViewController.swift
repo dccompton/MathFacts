@@ -221,6 +221,41 @@ class MathQuestionsViewController: UIViewController {
         }
     }
     
+//    func getFirstWrongAnswer() -> Int {
+//        
+//        var wrongAnswer = 0;
+//        
+//        if hardnessLevel == HardnessLevel.Hard {
+//            
+//            repeat {
+//                
+//                let numberRangeTop: UInt32 = UInt32(problemAnswer) + MAX_NUMBER_RANGE;
+//                wrongAnswer = Int(arc4random_uniform(numberRangeTop)) + 1;
+//                
+//                print("Get First Wrong Answer: I am here hard");
+//                print("problemAnswer = \(problemAnswer)");
+//                print("wrongAnswer = \(wrongAnswer)");
+//                print("Problem Answer - Variance \(problemAnswer - NUMBER_VARIANCE)");
+//                print("Problem Answer + Variance \(problemAnswer + NUMBER_VARIANCE)");
+//                print("=========================");
+//                
+//            } while wrongAnswer == problemAnswer || (wrongAnswer < (problemAnswer - NUMBER_VARIANCE) || wrongAnswer > (problemAnswer + NUMBER_VARIANCE))
+//        }
+//        else {
+//
+//            repeat {
+//                
+//                wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+//                
+//                print("First Wrong Answer: I is here easy");
+//                
+//            } while wrongAnswer == problemAnswer
+//            
+//        }
+//        
+//        return wrongAnswer;
+//    }
+    
     func getWrongAnswer() -> Int {
         
         var wrongAnswer = 0;
@@ -229,18 +264,28 @@ class MathQuestionsViewController: UIViewController {
 
             repeat {
                 
-                wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+                let numberRangeTop: UInt32 = UInt32(problemAnswer) + MAX_NUMBER_RANGE;
+                wrongAnswer = Int(arc4random_uniform(numberRangeTop)) + 1;
                 
-                print("I is here");
+                print("I am here hard");
+                print("problemAnswer = \(problemAnswer)");
+                print("wrongAnswer = \(wrongAnswer)");
+                print("Problem Answer - Variance \(problemAnswer - NUMBER_VARIANCE)");
+                print("Problem Answer + Variance \(problemAnswer + NUMBER_VARIANCE)");
+                print("=========================");
                 
             } while wrongAnswer == problemAnswer || (wrongAnswer < (problemAnswer - NUMBER_VARIANCE) || wrongAnswer > (problemAnswer + NUMBER_VARIANCE))
         }
-        
-//        repeat {
-//            
-//            wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-//            
-//        } while wrongAnswer == problemAnswer;
+        else {
+            
+            repeat {
+                
+                wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
+                
+                print("I is here easy");
+                
+            } while wrongAnswer == problemAnswer
+        }
         
         return wrongAnswer;
         
