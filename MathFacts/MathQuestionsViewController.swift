@@ -147,6 +147,7 @@ class MathQuestionsViewController: UIViewController {
         
         if timerRunning == false {
             
+            timerCount = 0;
             timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("IncrementTimer"), userInfo: nil, repeats: true);
             timerRunning = true;
         }
@@ -161,7 +162,13 @@ class MathQuestionsViewController: UIViewController {
         }
     }
     
+    func IncrementTimer() {
+        
+        timerCount++;
+    }
+    
     func runMathQuestions() {
+
         
         if currentProblemNumber < Int(MAX_PROBLEMS) {
             

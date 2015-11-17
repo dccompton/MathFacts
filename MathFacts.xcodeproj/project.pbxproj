@@ -18,6 +18,7 @@
 		2BA03DF91BE6890C005A36B4 /* MathFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03DF81BE6890C005A36B4 /* MathFactsTests.swift */; };
 		2BA03E041BE6890D005A36B4 /* MathFactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03E031BE6890D005A36B4 /* MathFactsUITests.swift */; };
 		2BA4BB311BEE934A00175689 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4BB301BEE934A00175689 /* SummaryViewController.swift */; };
+		2BB3E24E1BFBC43B001AB980 /* AnswerStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB3E24D1BFBC43B001AB980 /* AnswerStatistic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2BA03E031BE6890D005A36B4 /* MathFactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathFactsUITests.swift; sourceTree = "<group>"; };
 		2BA03E051BE6890D005A36B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA4BB301BEE934A00175689 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		2BB3E24D1BFBC43B001AB980 /* AnswerStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerStatistic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				2BA03DE51BE6890C005A36B4 /* ViewController.swift */,
 				2B38AAE01BF4E2C700F219E9 /* Constants.swift */,
 				2B2B79CB1BED4546002E55B9 /* MathQuestionsViewController.swift */,
+				2BB3E24D1BFBC43B001AB980 /* AnswerStatistic.swift */,
 				2BA03DE71BE6890C005A36B4 /* Main.storyboard */,
 				2BA4BB301BEE934A00175689 /* SummaryViewController.swift */,
 				2B2B79CD1BEE3F8F002E55B9 /* FinishedFewController.swift */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB3E24E1BFBC43B001AB980 /* AnswerStatistic.swift in Sources */,
 				2B2B79CC1BED4546002E55B9 /* MathQuestionsViewController.swift in Sources */,
 				2BA03DE61BE6890C005A36B4 /* ViewController.swift in Sources */,
 				2B2B79CE1BEE3F8F002E55B9 /* FinishedFewController.swift in Sources */,
