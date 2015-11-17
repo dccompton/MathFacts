@@ -75,6 +75,10 @@ class MathQuestionsViewController: UIViewController {
     var substractionQuestions: Bool = false;
     var multiplicationQuestions: Bool = false;
     
+    var timerCount = 0;
+    var timerRunning = false;
+    var timer = NSTimer();
+    
     @IBAction func hardnessLevel(sender: AnyObject) {
         
         let hardnessLevelButton = sender as! UIButton;
@@ -137,6 +141,24 @@ class MathQuestionsViewController: UIViewController {
         runMathQuestions();
         
         nextButton.hidden = true;
+    }
+    
+    func startTimer() {
+        
+        if timerRunning == false {
+            
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("IncrementTimer"), userInfo: nil, repeats: true);
+            timerRunning = true;
+        }
+    }
+    
+    func stopTimer() {
+        
+        if timerRunning == true {
+            
+            timer.invalidate();
+            timerRunning = false;
+        }
     }
     
     func runMathQuestions() {
