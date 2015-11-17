@@ -30,8 +30,6 @@ class MathQuestionsViewController: UIViewController {
         startOverButton.hidden = true;
         finishedButton.hidden = true;
         
-//        easyButton.hidden = true;
-//        hardButton.hidden = true;
         goButton.hidden = true;
 
     }
@@ -79,6 +77,9 @@ class MathQuestionsViewController: UIViewController {
     var timerRunning = false;
     var timer = NSTimer();
     
+    var slowestAnswersList = [AnswerStatisctic]();
+    var fastestAnswersList = [AnswerStatisctic]();
+    
     @IBAction func hardnessLevel(sender: AnyObject) {
         
         let hardnessLevelButton = sender as! UIButton;
@@ -105,6 +106,8 @@ class MathQuestionsViewController: UIViewController {
     }
     
     @IBAction func answerPressed(sender: AnyObject) {
+        
+        stopTimer();
         
         let answerButtonPressed = sender as! UIButton;
         
@@ -159,7 +162,33 @@ class MathQuestionsViewController: UIViewController {
             
             timer.invalidate();
             timerRunning = false;
+            
+            let statObject = AnswerStatisctic();
+            statObject.timeToAnswer = timerCount;
+            statObject.problemQuestion = problemQuestionLabel.text!;
+            
+            slowestAnswersList.append(statObject);
+            fastestAnswersList.append(statObject);
+            
+            slowestAnswersList.sortInPlace( { $0.timeToAnswer > $1.timeToAnswer } ); // DESC
+            fastestAnswersList.sortInPlace( { $0.timeToAnswer < $1.timeToAnswer } ); // ASC
+
+            slowestAnswersList = trimAnswerListStats(slowestAnswersList);
+            fastestAnswersList = trimAnswerListStats(fastestAnswersList);
+
         }
+    }
+    
+    func trimAnswerListStats(var statList: Array<AnswerStatisctic>) -> Array<AnswerStatisctic> {
+
+        if statList.count > 2 {
+            
+            let range = Range(start: 3, end: statList.count - 1);
+            statList.removeRange(range);
+        }
+        
+        return statList;
+        
     }
     
     func IncrementTimer() {
@@ -203,6 +232,8 @@ class MathQuestionsViewController: UIViewController {
             let secondWrongAnswer = getWrongAnswer();
             
             buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
+            
+            startTimer();
         }
         else {
             performSegueWithIdentifier("answerSummary", sender: nil)

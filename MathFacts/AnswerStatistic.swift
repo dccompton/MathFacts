@@ -10,26 +10,6 @@ import Foundation
 
 class AnswerStatisctic {
     
-    var timeToAnswer: Int {
-        
-        get {
-            
-            return self.timeToAnswer;
-        }
-        set {
-            
-            self.timeToAnswer = newValue;
-        }
-    }
-    
-    var problemQuestion: String {
-        
-        get {
-            
-            return self.problemQuestion;
-        }
-        set {
-            self.problemQuestion = newValue;
-        }
-    }
+    var timeToAnswer: Int = 0;
+    var problemQuestion: String = "";
 }
