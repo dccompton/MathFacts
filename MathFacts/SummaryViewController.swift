@@ -69,7 +69,7 @@ class SummaryViewController: UIViewController {
             
         for stat in statList {
                 
-            label.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2) ? "Seconds" : "Second").\tQuestion: \(stat.problemQuestion).\r";
+            label.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2.0) ? "Seconds" : "Second"). Question: \(stat.problemQuestion)\r";
         }
     }
 }

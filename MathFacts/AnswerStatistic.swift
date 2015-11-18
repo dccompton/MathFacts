@@ -10,6 +10,6 @@ import Foundation
 
 class AnswerStatistic {
     
-    var timeToAnswer: Int = 0;
+    var timeToAnswer: Double = 0.0;
     var problemQuestion: String = "";
 }

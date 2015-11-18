@@ -76,12 +76,12 @@ class MathQuestionsViewController: UIViewController {
     var multiplicationQuestions: Bool = false;
     
     //Per Question Timer
-    var timerCountPerQuestion = 0;
+    var timerCountPerQuestion = 0.0;
     var timerRunningPerQuestion = false;
     var timerPerQuestion = NSTimer();
     
     //Per Session Timer
-    var timerCountPerSession = 0;
+    var timerCountPerSession: Int = 0;
     var timerRunningPerSession = false;
     var timerPerSession = NSTimer();
     
@@ -168,7 +168,7 @@ class MathQuestionsViewController: UIViewController {
         if timerRunningPerQuestion == false {
             
             timerCountPerQuestion = 0;
-            timerPerQuestion = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("IncrementPerQuestionTimer"), userInfo: nil, repeats: true);
+            timerPerQuestion = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("IncrementPerQuestionTimer"), userInfo: nil, repeats: true);
             timerRunningPerQuestion = true;
         }
     }
@@ -230,7 +230,7 @@ class MathQuestionsViewController: UIViewController {
     
     func IncrementPerQuestionTimer() {
         
-        timerCountPerQuestion++;
+        timerCountPerQuestion += 0.1;
     }
 
     func IncrementPerSessionTimer() {
@@ -336,12 +336,12 @@ class MathQuestionsViewController: UIViewController {
                 let numberRangeTop: UInt32 = UInt32(problemAnswer) + MAX_NUMBER_RANGE;
                 wrongAnswer = Int(arc4random_uniform(numberRangeTop)) + 1;
                 
-                print("I am here hard");
-                print("problemAnswer = \(problemAnswer)");
-                print("wrongAnswer = \(wrongAnswer)");
-                print("Problem Answer - Variance \(problemAnswer - NUMBER_VARIANCE)");
-                print("Problem Answer + Variance \(problemAnswer + NUMBER_VARIANCE)");
-                print("=========================");
+//                print("I am here hard");
+//                print("problemAnswer = \(problemAnswer)");
+//                print("wrongAnswer = \(wrongAnswer)");
+//                print("Problem Answer - Variance \(problemAnswer - NUMBER_VARIANCE)");
+//                print("Problem Answer + Variance \(problemAnswer + NUMBER_VARIANCE)");
+//                print("=========================");
                 
             } while wrongAnswer == problemAnswer || (wrongAnswer < (problemAnswer - NUMBER_VARIANCE) || wrongAnswer > (problemAnswer + NUMBER_VARIANCE))
         }
