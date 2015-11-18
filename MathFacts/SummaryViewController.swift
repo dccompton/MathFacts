@@ -14,13 +14,15 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var answerSummaryLabel: UILabel!
     @IBOutlet weak var mainMenuButton: UIButton!
     @IBOutlet weak var percentCorrectLabel: UILabel!
+    @IBOutlet weak var topFastestLabel: UILabel!
+    @IBOutlet weak var topSlowestLabel: UILabel!
     
     //Properties
     var numberOfProblemsAnsweredCorrectly: Int!;
     var lastProblemNumberAnswered: Int!;
     
-    var timerPerQuestion: Array<AnswerStatistic>!;
-    var timerPerSession: Array<AnswerStatistic>!;
+    var timerPerQuestionSlowestList: Array<AnswerStatistic>!;
+    var timerPerQuestionFastList: Array<AnswerStatistic>!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,30 @@ class SummaryViewController: UIViewController {
             var percent: Double = Double(numberOfProblemsAnsweredCorrectly) / Double(lastProblemNumberAnswered);
             percent = percent * 100;
             percentCorrectLabel.text = "\(Int(percent))% correct";
+            
+            //Set and show the correct and wrong times
+            displayStats(timerPerQuestionFastList, label: topFastestLabel);
+            displayStats(timerPerQuestionSlowestList, label: topSlowestLabel);
+            
+//            if timerPerQuestionFastList != nil {
+//                
+//                topFastestLabel.text = String();
+//                
+//                for stat in timerPerQuestionFastList {
+//                    
+//                    topFastestLabel.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2) ? "Seconds" : "Second").\tQuestion: \(stat.problemQuestion).\r";
+//                }
+//            }
+            
+//            if timerPerQuestionSlowestList != nil {
+//                
+//                topSlowestLabel.text = String();
+//                
+//                for stat in timerPerQuestionSlowestList {
+//                    
+//                    topSlowestLabel.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2) ? "Seconds" : "Second").\tQuestion: \(stat.problemQuestion).\r";
+//                }
+//            }
         }
         else {
             
@@ -42,5 +68,13 @@ class SummaryViewController: UIViewController {
     
     }
     
-    
+    func displayStats(statList: Array<AnswerStatistic>, label: UILabel) {
+            
+        label.text = String();
+            
+        for stat in statList {
+                
+            label.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2) ? "Seconds" : "Second").\tQuestion: \(stat.problemQuestion).\r";
+        }
+    }
 }

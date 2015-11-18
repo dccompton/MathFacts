@@ -485,8 +485,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nH8-be-7eT">
-                                <rect key="frame" x="19" y="270" width="560" height="72"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nH8-be-7eT">
+                                <rect key="frame" x="20" y="78" width="560" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 right, 1 wrong out of 6 questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeb-48-Wdl" userLabel="answerSumLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="35"/>
@@ -505,21 +505,95 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BAQ-vx-rAT">
+                                <rect key="frame" x="150" y="192" width="300" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Fastest Answers:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9m5-WR-Uf0">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="JUc-VW-lDG"/>
+                                            <constraint firstAttribute="height" constant="32" id="p5p-PN-B5B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Fastest" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suq-gx-ub5">
+                                        <rect key="frame" x="0.0" y="32" width="300" height="108"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="108" id="ATf-8O-seR"/>
+                                            <constraint firstAttribute="width" constant="300" id="KGu-MC-PNt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Qui-VB-iB4"/>
+                                    <constraint firstAttribute="width" constant="300" id="ty8-PB-fvT"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-vF-4KS">
+                                <rect key="frame" x="150" y="347" width="300" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Slowest Answers:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cy-s1-lno">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Lvx-78-8KR"/>
+                                            <constraint firstAttribute="width" constant="300" id="efa-Yt-QG4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Slowest" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz3-AA-joe">
+                                        <rect key="frame" x="0.0" y="32" width="300" height="108"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="C0l-1o-FwG"/>
+                                            <constraint firstAttribute="height" constant="108" id="Jib-9l-bZq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="AWC-a7-eeC"/>
+                                    <constraint firstAttribute="width" constant="300" id="tP4-LJ-16t"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nH8-be-7eT" firstAttribute="top" secondItem="RtW-ui-b2k" secondAttribute="bottom" constant="8" id="5fm-hp-Cy3"/>
+                            <constraint firstItem="BAQ-vx-rAT" firstAttribute="top" secondItem="nH8-be-7eT" secondAttribute="bottom" constant="42" id="Dbo-F2-2Kc"/>
                             <constraint firstItem="nH8-be-7eT" firstAttribute="centerY" secondItem="Oai-j1-wwu" secondAttribute="centerY" id="Foa-hD-Cxm"/>
                             <constraint firstItem="Q7B-Nl-0KS" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="TRf-gY-mQm"/>
+                            <constraint firstItem="nH8-be-7eT" firstAttribute="top" secondItem="RtW-ui-b2k" secondAttribute="bottom" constant="8" id="ZtG-VI-FMX"/>
                             <constraint firstItem="RtW-ui-b2k" firstAttribute="top" secondItem="vXt-4O-ATt" secondAttribute="bottom" id="ZzD-NJ-VDO"/>
+                            <constraint firstItem="RtW-ui-b2k" firstAttribute="top" secondItem="vXt-4O-ATt" secondAttribute="bottom" id="cGe-FW-Azs"/>
                             <constraint firstItem="RtW-ui-b2k" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="gvj-VT-4wr"/>
+                            <constraint firstItem="nH8-be-7eT" firstAttribute="top" secondItem="RtW-ui-b2k" secondAttribute="bottom" constant="8" id="gzA-3M-5wX"/>
+                            <constraint firstItem="BAQ-vx-rAT" firstAttribute="top" secondItem="nH8-be-7eT" secondAttribute="bottom" constant="42" id="i4k-oP-P5N"/>
+                            <constraint firstItem="3tb-vF-4KS" firstAttribute="top" secondItem="BAQ-vx-rAT" secondAttribute="bottom" constant="15" id="jwb-ed-PgY"/>
                             <constraint firstItem="EFO-kK-ctH" firstAttribute="top" secondItem="Q7B-Nl-0KS" secondAttribute="bottom" constant="20" id="k4P-ch-ohJ"/>
                             <constraint firstItem="nH8-be-7eT" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="pKU-aW-TeW"/>
+                            <constraint firstItem="BAQ-vx-rAT" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="pqR-7H-qT8"/>
+                            <constraint firstItem="3tb-vF-4KS" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="yO1-c4-4wH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Foa-hD-Cxm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="answerSummaryLabel" destination="Aeb-48-Wdl" id="MaH-jC-wfW"/>
                         <outlet property="mainMenuButton" destination="Q7B-Nl-0KS" id="fFP-v0-xeo"/>
                         <outlet property="percentCorrectLabel" destination="qUd-TU-bat" id="S73-oC-MVq"/>
+                        <outlet property="topFastestLabel" destination="suq-gx-ub5" id="P9I-fK-Ztd"/>
+                        <outlet property="topSlowestLabel" destination="Nz3-AA-joe" id="pct-0l-bj7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoP-XK-ObC" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -40,8 +40,8 @@ class MathQuestionsViewController: UIViewController {
             
             svc.numberOfProblemsAnsweredCorrectly = numberOfProblemsAnsweredCorrectly;
             svc.lastProblemNumberAnswered = currentProblemNumber;
-            svc.timerPerQuestion = slowestAnswersList;
-            svc.timerPerSession = fastestAnswersList;
+            svc.timerPerQuestionSlowestList = slowestAnswersList;
+            svc.timerPerQuestionFastList = fastestAnswersList;
         }
     }
     
@@ -173,7 +173,7 @@ class MathQuestionsViewController: UIViewController {
                 
                 let statObject = AnswerStatistic();
                 statObject.timeToAnswer = timerCountPerQuestion;
-                statObject.problemQuestion = problemQuestionLabel.text!;
+                statObject.problemQuestion = String((problemQuestionLabel.text!.characters.split("="))[0]).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet());
                 
                 slowestAnswersList.append(statObject);
                 fastestAnswersList.append(statObject);
@@ -189,9 +189,9 @@ class MathQuestionsViewController: UIViewController {
     
     func trimAnswerListStats(var statList: Array<AnswerStatistic>) -> Array<AnswerStatistic> {
 
-        if statList.count > 2 {
+        if statList.count > 5 {
             
-            let range = Range(start: 2, end: statList.count);
+            let range = Range(start: 5, end: statList.count);
             statList.removeRange(range);
         }
         
