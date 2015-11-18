@@ -40,7 +40,8 @@ class MathQuestionsViewController: UIViewController {
             
             svc.numberOfProblemsAnsweredCorrectly = numberOfProblemsAnsweredCorrectly;
             svc.lastProblemNumberAnswered = currentProblemNumber;
-            
+            svc.timerPerQuestion = slowestAnswersList;
+            svc.timerPerSession = fastestAnswersList;
         }
     }
     
@@ -73,12 +74,18 @@ class MathQuestionsViewController: UIViewController {
     var substractionQuestions: Bool = false;
     var multiplicationQuestions: Bool = false;
     
-    var timerCount = 0;
-    var timerRunning = false;
-    var timer = NSTimer();
+    //Per Question Timer
+    var timerCountPerQuestion = 0;
+    var timerRunningPerQuestion = false;
+    var timerPerQuestion = NSTimer();
     
-    var slowestAnswersList = [AnswerStatisctic]();
-    var fastestAnswersList = [AnswerStatisctic]();
+    //Per Session Timer
+    var timerCountPerSession = 0;
+    var timerRunningPerSession = false;
+    var timerPerSession = NSTimer();
+    
+    var slowestAnswersList = [AnswerStatistic]();
+    var fastestAnswersList = [AnswerStatistic]();
     
     @IBAction func hardnessLevel(sender: AnyObject) {
         
@@ -107,12 +114,11 @@ class MathQuestionsViewController: UIViewController {
     
     @IBAction func answerPressed(sender: AnyObject) {
         
-        stopTimer();
-        
         let answerButtonPressed = sender as! UIButton;
         
         if answerButtonPressed.tag == problemAnswer {
-            
+
+            stopPerQuestionTimer(true);
             numberOfProblemsAnsweredCorrectly++;
 
             runMathQuestions();
@@ -146,54 +152,55 @@ class MathQuestionsViewController: UIViewController {
         nextButton.hidden = true;
     }
     
-    func startTimer() {
+    func startPerQuestionTimer() {
         
-        if timerRunning == false {
+        if timerRunningPerQuestion == false {
             
-            timerCount = 0;
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("IncrementTimer"), userInfo: nil, repeats: true);
-            timerRunning = true;
+            timerCountPerQuestion = 0;
+            timerPerQuestion = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("IncrementPerQuestionTimer"), userInfo: nil, repeats: true);
+            timerRunningPerQuestion = true;
         }
     }
     
-    func stopTimer() {
+    func stopPerQuestionTimer(problemAnsweredCorrectly: Bool = false) {
         
-        if timerRunning == true {
+        if timerRunningPerQuestion == true {
             
-            timer.invalidate();
-            timerRunning = false;
+            timerPerQuestion.invalidate();
+            timerRunningPerQuestion = false;
             
-            let statObject = AnswerStatisctic();
-            statObject.timeToAnswer = timerCount;
-            statObject.problemQuestion = problemQuestionLabel.text!;
-            
-            slowestAnswersList.append(statObject);
-            fastestAnswersList.append(statObject);
-            
-            slowestAnswersList.sortInPlace( { $0.timeToAnswer > $1.timeToAnswer } ); // DESC
-            fastestAnswersList.sortInPlace( { $0.timeToAnswer < $1.timeToAnswer } ); // ASC
-
-            slowestAnswersList = trimAnswerListStats(slowestAnswersList);
-            fastestAnswersList = trimAnswerListStats(fastestAnswersList);
-
+            if problemAnsweredCorrectly {
+                
+                let statObject = AnswerStatistic();
+                statObject.timeToAnswer = timerCountPerQuestion;
+                statObject.problemQuestion = problemQuestionLabel.text!;
+                
+                slowestAnswersList.append(statObject);
+                fastestAnswersList.append(statObject);
+                
+                slowestAnswersList.sortInPlace( { $0.timeToAnswer > $1.timeToAnswer } ); // DESC
+                fastestAnswersList.sortInPlace( { $0.timeToAnswer < $1.timeToAnswer } ); // ASC
+                
+                slowestAnswersList = trimAnswerListStats(slowestAnswersList);
+                fastestAnswersList = trimAnswerListStats(fastestAnswersList);
+            }
         }
     }
     
-    func trimAnswerListStats(var statList: Array<AnswerStatisctic>) -> Array<AnswerStatisctic> {
+    func trimAnswerListStats(var statList: Array<AnswerStatistic>) -> Array<AnswerStatistic> {
 
         if statList.count > 2 {
             
-            let range = Range(start: 3, end: statList.count - 1);
+            let range = Range(start: 2, end: statList.count);
             statList.removeRange(range);
         }
         
         return statList;
-        
     }
     
-    func IncrementTimer() {
+    func IncrementPerQuestionTimer() {
         
-        timerCount++;
+        timerCountPerQuestion++;
     }
     
     func runMathQuestions() {
@@ -233,7 +240,7 @@ class MathQuestionsViewController: UIViewController {
             
             buildAndShowRightAndWrongAnswers(firstWrongAnswer, secondWrongAnswer: secondWrongAnswer, problemAnswer: problemAnswer);
             
-            startTimer();
+            startPerQuestionTimer();
         }
         else {
             performSegueWithIdentifier("answerSummary", sender: nil)
@@ -281,41 +288,6 @@ class MathQuestionsViewController: UIViewController {
         }
     }
     
-//    func getFirstWrongAnswer() -> Int {
-//        
-//        var wrongAnswer = 0;
-//        
-//        if hardnessLevel == HardnessLevel.Hard {
-//            
-//            repeat {
-//                
-//                let numberRangeTop: UInt32 = UInt32(problemAnswer) + MAX_NUMBER_RANGE;
-//                wrongAnswer = Int(arc4random_uniform(numberRangeTop)) + 1;
-//                
-//                print("Get First Wrong Answer: I am here hard");
-//                print("problemAnswer = \(problemAnswer)");
-//                print("wrongAnswer = \(wrongAnswer)");
-//                print("Problem Answer - Variance \(problemAnswer - NUMBER_VARIANCE)");
-//                print("Problem Answer + Variance \(problemAnswer + NUMBER_VARIANCE)");
-//                print("=========================");
-//                
-//            } while wrongAnswer == problemAnswer || (wrongAnswer < (problemAnswer - NUMBER_VARIANCE) || wrongAnswer > (problemAnswer + NUMBER_VARIANCE))
-//        }
-//        else {
-//
-//            repeat {
-//                
-//                wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-//                
-//                print("First Wrong Answer: I is here easy");
-//                
-//            } while wrongAnswer == problemAnswer
-//            
-//        }
-//        
-//        return wrongAnswer;
-//    }
-    
     func getWrongAnswer() -> Int {
         
         var wrongAnswer = 0;
@@ -348,7 +320,6 @@ class MathQuestionsViewController: UIViewController {
         }
         
         return wrongAnswer;
-        
     }
     
     func showAnswerChoices() {

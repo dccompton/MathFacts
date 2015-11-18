@@ -19,6 +19,9 @@ class SummaryViewController: UIViewController {
     var numberOfProblemsAnsweredCorrectly: Int!;
     var lastProblemNumberAnswered: Int!;
     
+    var timerPerQuestion: Array<AnswerStatistic>!;
+    var timerPerSession: Array<AnswerStatistic>!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

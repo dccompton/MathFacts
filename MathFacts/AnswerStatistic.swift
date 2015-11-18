@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AnswerStatisctic {
+class AnswerStatistic {
     
     var timeToAnswer: Int = 0;
     var problemQuestion: String = "";
