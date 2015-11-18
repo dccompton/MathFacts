@@ -125,15 +125,15 @@ class MathQuestionsViewController: UIViewController {
         
         let answerButtonPressed = sender as! UIButton;
         
-        stopPerQuestionTimer(true);
-        
         if answerButtonPressed.tag == problemAnswer {
 
+            stopPerQuestionTimer(true);
             numberOfProblemsAnsweredCorrectly++;
             runMathQuestions();
             
         } else {
             
+            stopPerQuestionTimer(false);
             nextButton.hidden = false;
             displayCorrectProblemAnswer();
         }
@@ -158,9 +158,9 @@ class MathQuestionsViewController: UIViewController {
         
         clearOutBackgroundColors();
 
-        runMathQuestions();
-        
         nextButton.hidden = true;
+        
+        runMathQuestions();
     }
     
     func startPerQuestionTimer() {
@@ -219,9 +219,9 @@ class MathQuestionsViewController: UIViewController {
     
     func trimAnswerListStats(var statList: Array<AnswerStatistic>) -> Array<AnswerStatistic> {
 
-        if statList.count > 5 {
+        if statList.count > MAX_LENGTH_OF_STATS_LIST {
             
-            let range = Range(start: 5, end: statList.count);
+            let range = Range(start: MAX_LENGTH_OF_STATS_LIST, end: statList.count);
             statList.removeRange(range);
         }
         

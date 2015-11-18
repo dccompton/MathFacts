@@ -25,3 +25,4 @@ enum HardnessLevel {
 let MAX_NUMBER_RANGE: UInt32 = 10;
 let MAX_PROBLEMS: Int = 100;
 let NUMBER_VARIANCE = 5;
+let MAX_LENGTH_OF_STATS_LIST = 5;

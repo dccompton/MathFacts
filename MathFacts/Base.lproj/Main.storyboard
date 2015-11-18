@@ -170,7 +170,7 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-gQ-Qpr">
-                                <rect key="frame" x="186" y="128" width="228" height="90"/>
+                                <rect key="frame" x="186" y="128" width="228" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mmd-yH-ef5">
                                         <rect key="frame" x="2" y="0.0" width="225" height="50"/>
@@ -214,11 +214,11 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-Q0-NkZ">
-                                        <rect key="frame" x="0.0" y="50" width="228" height="40"/>
+                                        <rect key="frame" x="0.0" y="50" width="228" height="50"/>
                                         <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="228" id="XZx-gE-3hn"/>
-                                            <constraint firstAttribute="height" constant="40" id="yD9-AL-uGj"/>
+                                            <constraint firstAttribute="height" constant="50" id="yD9-AL-uGj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <state key="normal" title="Go!">
@@ -498,7 +498,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="% Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-TU-bat">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" misplaced="YES" text="% Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-TU-bat">
                                         <rect key="frame" x="237" y="37" width="87" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -621,7 +621,7 @@
         <image name="Math-Facts" width="609" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qc0-jQ-KJB"/>
+        <segue reference="7iQ-BT-vd3"/>
         <segue reference="7As-MD-OSM"/>
     </inferredMetricsTieBreakers>
 </document>
