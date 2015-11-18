@@ -75,16 +75,17 @@ class MathQuestionsViewController: UIViewController {
     var substractionQuestions: Bool = false;
     var multiplicationQuestions: Bool = false;
     
-    //Per Question Timer
+    //Per Question Timer Variables
     var timerCountPerQuestion = 0.0;
     var timerRunningPerQuestion = false;
     var timerPerQuestion = NSTimer();
     
-    //Per Session Timer
+    //Per Session Timer Variables
     var timerCountPerSession: Int = 0;
     var timerRunningPerSession = false;
     var timerPerSession = NSTimer();
     
+    //To store the stats for slowest and fastest answers
     var slowestAnswersList = [AnswerStatistic]();
     var fastestAnswersList = [AnswerStatistic]();
     
@@ -92,13 +93,7 @@ class MathQuestionsViewController: UIViewController {
         
         let hardnessLevelButton = sender as! UIButton;
         
-        if hardnessLevelButton.tag == 1 {
-            
-            hardnessLevel = HardnessLevel.Easy;
-        }
-        else {
-            hardnessLevel = HardnessLevel.Hard;
-        }
+        hardnessLevel = hardnessLevelButton.tag == 1 ? HardnessLevel.Easy : HardnessLevel.Hard;
         
         hardButton.hidden = true;
         easyButton.hidden = true;
@@ -107,6 +102,10 @@ class MathQuestionsViewController: UIViewController {
     
     @IBAction func finishedPress(sender: AnyObject) {
         
+        //Reduce the current problem number in the case that the 
+        //user finishes before all questions were answers (since the problem
+        //number is auto incremented when a users answers a question.
+        //If the next button is hidden we can assume that a wrong answer was not chosen
         if nextButton.hidden == true {
          
             currentProblemNumber--;
@@ -267,7 +266,6 @@ class MathQuestionsViewController: UIViewController {
                 secondNumber = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
                 problemAnswer = firstNumber * secondNumber;
                 problemQuestionLabel.text = "\(firstNumber) * \(secondNumber) = ?";
-                
             }
             
             //Get the wrong answers
@@ -288,8 +286,7 @@ class MathQuestionsViewController: UIViewController {
     {
         //Build answer selections
         //These must be randomized so that the correct answer is not always in the same position
-        let answerOrder = Int(arc4random_uniform(3)) + 1;
-        switch answerOrder {
+        switch (Int(arc4random_uniform(3)) + 1) {
         case 1:
             
             questionAnswer1.setTitle(String(problemAnswer), forState: .Normal);
@@ -336,13 +333,6 @@ class MathQuestionsViewController: UIViewController {
                 let numberRangeTop: UInt32 = UInt32(problemAnswer) + MAX_NUMBER_RANGE;
                 wrongAnswer = Int(arc4random_uniform(numberRangeTop)) + 1;
                 
-//                print("I am here hard");
-//                print("problemAnswer = \(problemAnswer)");
-//                print("wrongAnswer = \(wrongAnswer)");
-//                print("Problem Answer - Variance \(problemAnswer - NUMBER_VARIANCE)");
-//                print("Problem Answer + Variance \(problemAnswer + NUMBER_VARIANCE)");
-//                print("=========================");
-                
             } while wrongAnswer == problemAnswer || (wrongAnswer < (problemAnswer - NUMBER_VARIANCE) || wrongAnswer > (problemAnswer + NUMBER_VARIANCE))
         }
         else {
@@ -350,8 +340,6 @@ class MathQuestionsViewController: UIViewController {
             repeat {
                 
                 wrongAnswer = Int(arc4random_uniform(MAX_NUMBER_RANGE)) + 1;
-                
-                print("I is here easy");
                 
             } while wrongAnswer == problemAnswer
         }

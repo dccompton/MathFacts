@@ -65,8 +65,9 @@ class SummaryViewController: UIViewController {
     
     func displayStats(statList: Array<AnswerStatistic>, label: UILabel) {
             
-        label.text = String();
-            
+        label.text = String(); //Clear out the label
+        
+        //Build the stats label for each stat collected
         for stat in statList {
                 
             label.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2.0) ? "Seconds" : "Second"). Question: \(stat.problemQuestion)\r";

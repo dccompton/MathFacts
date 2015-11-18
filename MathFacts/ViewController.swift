@@ -37,7 +37,6 @@ class ViewController: UIViewController {
             else if buttonPressed.tag == 3 {
                 svc.typeOfProblem = MathProblem.Multiplication;
             }
-            
         }
     }
     
@@ -46,7 +45,5 @@ class ViewController: UIViewController {
     @IBOutlet weak var additionButton: UIButton!;
     @IBOutlet weak var subtractionButton: UIButton!;
     @IBOutlet weak var multiplicationButton: UIButton!
-    
-
 }
 
