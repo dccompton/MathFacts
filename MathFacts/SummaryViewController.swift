@@ -15,14 +15,19 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var mainMenuButton: UIButton!
     @IBOutlet weak var percentCorrectLabel: UILabel!
     @IBOutlet weak var topFastestLabel: UILabel!
+    @IBOutlet weak var topFastestHeaderLabel: UILabel!
+    @IBOutlet weak var topSlowestHeaderLabel: UILabel!
     @IBOutlet weak var topSlowestLabel: UILabel!
+    @IBOutlet weak var overallTimeLabel: UILabel!
     
     //Properties
     var numberOfProblemsAnsweredCorrectly: Int!;
     var lastProblemNumberAnswered: Int!;
     
+    //Properties - Timers
     var timerPerQuestionSlowestList: Array<AnswerStatistic>!;
     var timerPerQuestionFastList: Array<AnswerStatistic>!;
+    var timerCountPerSession: Int!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,25 +45,9 @@ class SummaryViewController: UIViewController {
             displayStats(timerPerQuestionFastList, label: topFastestLabel);
             displayStats(timerPerQuestionSlowestList, label: topSlowestLabel);
             
-//            if timerPerQuestionFastList != nil {
-//                
-//                topFastestLabel.text = String();
-//                
-//                for stat in timerPerQuestionFastList {
-//                    
-//                    topFastestLabel.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2) ? "Seconds" : "Second").\tQuestion: \(stat.problemQuestion).\r";
-//                }
-//            }
-            
-//            if timerPerQuestionSlowestList != nil {
-//                
-//                topSlowestLabel.text = String();
-//                
-//                for stat in timerPerQuestionSlowestList {
-//                    
-//                    topSlowestLabel.text! += "\(stat.timeToAnswer) \((stat.timeToAnswer >= 2) ? "Seconds" : "Second").\tQuestion: \(stat.problemQuestion).\r";
-//                }
-//            }
+            let (m, s) = secondsToHoursMinutesSeconds(timerCountPerSession);
+            overallTimeLabel.text = "Overall Time: \(m) minutes and \(s) seconds.";
+    
         }
         else {
             
@@ -66,6 +55,12 @@ class SummaryViewController: UIViewController {
             percentCorrectLabel.hidden = true;
         }
     
+    }
+    
+    func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int) {
+        
+        //return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60);
+        return ((seconds % 3600) / 60, (seconds % 3600) % 60);
     }
     
     func displayStats(statList: Array<AnswerStatistic>, label: UILabel) {

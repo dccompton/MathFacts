@@ -364,6 +364,7 @@
                                             <color key="titleColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                         <connections>
+                                            <action selector="startOverPressed:" destination="zGN-9X-Qc6" eventType="touchUpInside" id="Czt-i2-iBO"/>
                                             <segue destination="BYZ-38-t0r" kind="show" id="qc0-jQ-KJB"/>
                                         </connections>
                                     </button>
@@ -514,7 +515,7 @@
                                             <constraint firstAttribute="width" constant="300" id="JUc-VW-lDG"/>
                                             <constraint firstAttribute="height" constant="32" id="p5p-PN-B5B"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -524,7 +525,7 @@
                                             <constraint firstAttribute="height" constant="108" id="ATf-8O-seR"/>
                                             <constraint firstAttribute="width" constant="300" id="KGu-MC-PNt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -543,7 +544,7 @@
                                             <constraint firstAttribute="height" constant="32" id="Lvx-78-8KR"/>
                                             <constraint firstAttribute="width" constant="300" id="efa-Yt-QG4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -553,7 +554,7 @@
                                             <constraint firstAttribute="width" constant="300" id="C0l-1o-FwG"/>
                                             <constraint firstAttribute="height" constant="108" id="Jib-9l-bZq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -563,16 +564,28 @@
                                     <constraint firstAttribute="width" constant="300" id="tP4-LJ-16t"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Overall Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnw-Jg-CsY">
+                                <rect key="frame" x="150" y="503" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="AaZ-zl-Jw8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nH8-be-7eT" firstAttribute="top" secondItem="RtW-ui-b2k" secondAttribute="bottom" constant="8" id="5fm-hp-Cy3"/>
+                            <constraint firstItem="Jnw-Jg-CsY" firstAttribute="top" secondItem="3tb-vF-4KS" secondAttribute="bottom" constant="16" id="9XK-5e-g2s"/>
                             <constraint firstItem="BAQ-vx-rAT" firstAttribute="top" secondItem="nH8-be-7eT" secondAttribute="bottom" constant="42" id="Dbo-F2-2Kc"/>
                             <constraint firstItem="nH8-be-7eT" firstAttribute="centerY" secondItem="Oai-j1-wwu" secondAttribute="centerY" id="Foa-hD-Cxm"/>
+                            <constraint firstItem="3tb-vF-4KS" firstAttribute="top" secondItem="BAQ-vx-rAT" secondAttribute="bottom" constant="15" id="K1P-Hv-mai"/>
                             <constraint firstItem="Q7B-Nl-0KS" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="TRf-gY-mQm"/>
                             <constraint firstItem="nH8-be-7eT" firstAttribute="top" secondItem="RtW-ui-b2k" secondAttribute="bottom" constant="8" id="ZtG-VI-FMX"/>
                             <constraint firstItem="RtW-ui-b2k" firstAttribute="top" secondItem="vXt-4O-ATt" secondAttribute="bottom" id="ZzD-NJ-VDO"/>
                             <constraint firstItem="RtW-ui-b2k" firstAttribute="top" secondItem="vXt-4O-ATt" secondAttribute="bottom" id="cGe-FW-Azs"/>
+                            <constraint firstItem="Jnw-Jg-CsY" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="fIZ-mW-DV0"/>
                             <constraint firstItem="RtW-ui-b2k" firstAttribute="centerX" secondItem="Oai-j1-wwu" secondAttribute="centerX" id="gvj-VT-4wr"/>
                             <constraint firstItem="nH8-be-7eT" firstAttribute="top" secondItem="RtW-ui-b2k" secondAttribute="bottom" constant="8" id="gzA-3M-5wX"/>
                             <constraint firstItem="BAQ-vx-rAT" firstAttribute="top" secondItem="nH8-be-7eT" secondAttribute="bottom" constant="42" id="i4k-oP-P5N"/>
@@ -591,8 +604,11 @@
                     <connections>
                         <outlet property="answerSummaryLabel" destination="Aeb-48-Wdl" id="MaH-jC-wfW"/>
                         <outlet property="mainMenuButton" destination="Q7B-Nl-0KS" id="fFP-v0-xeo"/>
+                        <outlet property="overallTimeLabel" destination="Jnw-Jg-CsY" id="AkF-9f-PzS"/>
                         <outlet property="percentCorrectLabel" destination="qUd-TU-bat" id="S73-oC-MVq"/>
+                        <outlet property="topFastestHeaderLabel" destination="9m5-WR-Uf0" id="lLS-dl-lVf"/>
                         <outlet property="topFastestLabel" destination="suq-gx-ub5" id="P9I-fK-Ztd"/>
+                        <outlet property="topSlowestHeaderLabel" destination="6cy-s1-lno" id="O87-AV-BXl"/>
                         <outlet property="topSlowestLabel" destination="Nz3-AA-joe" id="pct-0l-bj7"/>
                     </connections>
                 </viewController>
@@ -605,7 +621,7 @@
         <image name="Math-Facts" width="609" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7iQ-BT-vd3"/>
+        <segue reference="qc0-jQ-KJB"/>
         <segue reference="7As-MD-OSM"/>
     </inferredMetricsTieBreakers>
 </document>

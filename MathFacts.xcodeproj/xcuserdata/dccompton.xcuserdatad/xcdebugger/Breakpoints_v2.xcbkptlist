@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/SummaryViewController.swift"
-            timestampString = "469549604.995958"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469509964.919863"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "answerPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469509964.919863"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "MathQuestionsViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469509964.919863"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "MathQuestionsViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469509964.919863"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "trimAnswerListStats(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469509964.919863"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "stopPerQuestionTimer(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469509964.919863"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "startPerQuestionTimer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469510114.971523"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "trimAnswerListStats(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathFacts/MathQuestionsViewController.swift"
-            timestampString = "469552245.77365"
+            timestampString = "469556362.904315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "stopPerQuestionTimer(_:)"
             landmarkType = "5">
          </BreakpointContent>

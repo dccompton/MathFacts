@@ -42,6 +42,7 @@ class MathQuestionsViewController: UIViewController {
             svc.lastProblemNumberAnswered = currentProblemNumber;
             svc.timerPerQuestionSlowestList = slowestAnswersList;
             svc.timerPerQuestionFastList = fastestAnswersList;
+            svc.timerCountPerSession = timerCountPerSession;
         }
     }
     
@@ -110,17 +111,25 @@ class MathQuestionsViewController: UIViewController {
          
             currentProblemNumber--;
         }
+        
+        stopPerSessionTimer();
+    }
+    
+    @IBAction func startOverPressed(sender: AnyObject) {
+        
+        stopPerQuestionTimer();
+        stopPerSessionTimer();
     }
     
     @IBAction func answerPressed(sender: AnyObject) {
         
         let answerButtonPressed = sender as! UIButton;
         
+        stopPerQuestionTimer(true);
+        
         if answerButtonPressed.tag == problemAnswer {
 
-            stopPerQuestionTimer(true);
             numberOfProblemsAnsweredCorrectly++;
-
             runMathQuestions();
             
         } else {
@@ -141,6 +150,8 @@ class MathQuestionsViewController: UIViewController {
         showAnswerChoices();
         
         runMathQuestions();
+        
+        startPerSessionTimer();
     }
     
     @IBAction func nextButtonPressed() {
@@ -159,6 +170,16 @@ class MathQuestionsViewController: UIViewController {
             timerCountPerQuestion = 0;
             timerPerQuestion = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("IncrementPerQuestionTimer"), userInfo: nil, repeats: true);
             timerRunningPerQuestion = true;
+        }
+    }
+    
+    func startPerSessionTimer() {
+        
+        if timerRunningPerSession == false {
+            
+            timerCountPerSession = 0;
+            timerPerSession = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("IncrementPerSessionTimer"), userInfo: nil, repeats: true);
+            timerRunningPerSession = true;
         }
     }
     
@@ -187,6 +208,15 @@ class MathQuestionsViewController: UIViewController {
         }
     }
     
+    func stopPerSessionTimer() {
+        
+        if timerRunningPerSession == true {
+            
+            timerPerSession.invalidate();
+            timerRunningPerSession = false;
+        }
+    }
+    
     func trimAnswerListStats(var statList: Array<AnswerStatistic>) -> Array<AnswerStatistic> {
 
         if statList.count > 5 {
@@ -202,6 +232,12 @@ class MathQuestionsViewController: UIViewController {
         
         timerCountPerQuestion++;
     }
+
+    func IncrementPerSessionTimer() {
+        
+        timerCountPerSession++;
+    }
+    
     
     func runMathQuestions() {
 
@@ -243,6 +279,7 @@ class MathQuestionsViewController: UIViewController {
             startPerQuestionTimer();
         }
         else {
+            stopPerSessionTimer();
             performSegueWithIdentifier("answerSummary", sender: nil)
         }
     }
